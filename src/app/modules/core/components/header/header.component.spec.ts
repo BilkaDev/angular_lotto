@@ -3,14 +3,19 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { HeaderComponent } from "./header.component";
 import { RouterModule } from "@angular/router";
 import { By } from "@angular/platform-browser";
+import { TranslateTestingModule } from "ngx-translate-testing";
 
+const translateTestingModule = () =>
+  TranslateTestingModule.withTranslations({
+    en: {},
+  });
 describe("HeaderComponent", () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderComponent, RouterModule.forRoot([])],
+      imports: [HeaderComponent, RouterModule.forRoot([]), translateTestingModule()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderComponent);

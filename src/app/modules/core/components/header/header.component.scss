@@ -1,4 +1,8 @@
+:host{
+  position: relative;
+}
 .spacer {
+
   flex: 1 1 auto;
 }
 
@@ -8,4 +12,13 @@
 
 .mode-btn {
   margin-left: 0.5rem;
+}
+
+.btn-lang-group {
+  position: absolute;
+  top: 120%;
+  right: 2%;
+  .btn-lang {
+    color: var(--main-font-color);
+  }
 }
