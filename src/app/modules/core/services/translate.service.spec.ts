@@ -2,7 +2,7 @@ import { TestBed } from "@angular/core/testing";
 import { TranslateService } from "./translate.service";
 import { TranslateService as TranslateServiceCore } from "@ngx-translate/core";
 
-fdescribe("TranslateService", () => {
+describe("TranslateService", () => {
   let service: TranslateService;
   let translateServiceCore: TranslateServiceCore;
 
