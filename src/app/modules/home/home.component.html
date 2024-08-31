@@ -1,20 +1,17 @@
 <header>
-  <h1>Welcome to AngularLotto</h1>
+  <h1>{{ "home.header" | translate }}</h1>
 </header>
 <div class="container">
   <div class="card">
-    <p>Get ready for exciting fun and a chance to win! Every Saturday at 12:00 our drawing is held,
-      During which we choose 6 numbers. Your task is to pick at least 3 of them to win fantastic
-      prizes!</p>
-    <h2>How it works?</h2>
+    <p>{{ "home.description" | translate }}</p>
+    <h2>{{ "home.how-it-work" | translate }}</h2>
     <ul>
-      <li><strong>Choose your numbers</strong> – Type 6 digits from 1 to 99.</li>
-      <li><strong>Wait for the drawing</strong> – Every Saturday at 12:00 we draw 6 numbers.</li>
-      <li><strong>Check the score</strong> – If you hit at least 3 numbers, you are the winner!</li>
+      <li><strong>{{ "home.list.choose" | translate }}</strong> – {{ "home.list.choose-desc" | translate }}</li>
+      <li><strong>{{ "home.list.wait" | translate }}</strong> – {{ "home.list.wait-desc" | translate }}</li>
+      <li><strong>{{ "home.list.check" | translate }}</strong> – {{ "home.list.check-desc" | translate }}</li>
     </ul>
-    <p>Join our community of players, follow the results and stay up to date with the latest rewards. Don't miss your
-      chance to win - play today and have a chance to win big!</p>
-    <h2>Draw, win and have fun!</h2>
+    <p>{{ "home.join-us" | translate }}</p>
+    <h2>{{ "home.have-fun" | translate }}</h2>
   </div>
   <div class="lotto-image">
     <img ngSrc="{{imagePath}}" alt="lotto-image" height="450" width="600" priority>

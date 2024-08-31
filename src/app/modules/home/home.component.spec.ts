@@ -1,14 +1,20 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { HomeComponent } from "./home.component";
+import { TranslateTestingModule } from "ngx-translate-testing";
 
+import enJson from "../../../../public/i8n/en.json";
+const translateTestingModule = () =>
+  TranslateTestingModule.withTranslations({
+    enJson,
+  });
 describe("HomeComponent", () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeComponent],
+      imports: [HomeComponent, translateTestingModule()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
