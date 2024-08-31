@@ -1,0 +1,22 @@
+{
+  "core": {
+    "home": "Strona główna",
+    "play": "Graj",
+    "results": "Wyniki"
+  },
+  "home": {
+    "header": "Witamy w AngularLotto",
+    "description": "Przygotuj się na ekscytującą zabawę i szansę na wygraną! W każdą sobotę o 12:00 odbywa się nasze losowanie, podczas którego losujemy 6 liczb. Twoim zadaniem jest trafienie co najmniej 3 z nich, aby wygrać fantastyczne nagrody!",
+    "how-it-work": "Jak to działa?",
+    "have-fun": "Losuj, wygrywaj i baw się dobrze!",
+    "join-us": "Dołącz do naszej społeczności graczy, śledź wyniki i bądź na bieżąco z najnowszymi nagrodami. Nie przegap swojej szansy na wygraną - zagraj już dziś i miej szansę na wielką wygraną!",
+    "list": {
+      "choose": "Wybierz swoje liczby",
+      "choose-desc": "Wpisz 6 cyfr od 1 do 99.",
+      "wait": "Czekaj na losowanie",
+      "wait-desc": "W każdą sobotę o 12:00 losujemy 6 liczb.",
+      "check": "Sprawdź wynik",
+      "check-desc": "Jeśli trafisz co najmniej 3 liczby, jesteś zwycięzcą!"
+    }
+  }
+}

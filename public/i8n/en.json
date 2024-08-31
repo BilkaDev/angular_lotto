@@ -1,0 +1,22 @@
+{
+  "core": {
+    "home": "Home",
+    "play": "Play",
+    "results": "Results"
+  },
+  "home": {
+    "header": "Welcome to AngularLotto",
+    "description": "Get ready for exciting fun and a chance to win! Every Saturday at 12:00 our drawing is held, During which we choose 6 numbers. Your task is to pick at least 3 of them to win fantastic prizes!",
+    "how-it-work": "How it works?",
+    "have-fun": "Draw, win and have fun!",
+    "join-us": "Join our community of players, follow the results and stay up to date with the latest rewards. Don't miss your chance to win - play today and have a chance to win big!",
+    "list": {
+      "choose": "Choose your numbers",
+      "choose-desc": "Type 6 digits from 1 to 99.",
+      "wait" : "Wait for the drawing",
+      "wait-desc" : "Every Saturday at 12:00 we draw 6 numbers.",
+      "check": "Check the score",
+      "check-dsc": "If you hit at least 3 numbers, you are the winner!"
+    }
+  }
+}
