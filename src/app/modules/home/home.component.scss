@@ -1,0 +1,61 @@
+header {
+  margin: 2rem 4rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  margin-bottom: 2rem;
+
+  .lotto-image {
+    display: none;
+    overflow: hidden;
+    position: relative;
+    img {
+      position: absolute;
+      left: -40%;
+      height: auto;
+    }
+  }
+
+  .card {
+    background-color: var(--home-card-background-color);
+    margin: 0 .5rem;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  line-height: 1.6;
+}
+
+ul {
+  margin: 1rem 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  margin: .5rem 0;
+}
+
+@media (min-width: 756px) {
+  .container {
+    .card {
+      flex: 2;
+      min-width: 60%;
+    }
+
+    .lotto-image {
+      display: block;
+      flex: 1;
+    }
+  }
+
+}

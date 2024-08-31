@@ -1,7 +1,29 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$cyan-palette,
+    tertiary: mat.$orange-palette,
+  ),
+  typography: (
+    bold-weight: 900
+  ),
+  density: (
+    scale: 0
+  )
+));
+
 [data-theme="light"] {
-  --header-first-letter-color: red;
+  --main-background-color: #f8f8f8;
+  --main-font-color: black;
+  --home-card-background-color: white;
 }
 
 [data-theme="dark"] {
-  --header-first-letter-color: blue;
+  --main-background-color: #0c0c0c;
+  --main-font-color: white;
+  --home-card-background-color: #1c1c1c;
 }
