@@ -16,7 +16,27 @@ describe("HomeComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it("should create the component", () => {
     expect(component).toBeTruthy();
+  });
+
+  it("should display the welcome message", () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector("h1")?.textContent).toContain("Welcome to AngularLotto");
+  });
+
+  it("should display the lotto instructions", () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const listItems = compiled.querySelectorAll("ul li");
+    expect(listItems.length).toEqual(3);
+  });
+
+  it("should display the lotto image", () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const imgElement = compiled.querySelector(".lotto-image img");
+    expect(imgElement).toBeTruthy();
   });
 });
