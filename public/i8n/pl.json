@@ -18,5 +18,10 @@
       "check": "Sprawdź wynik",
       "check-desc": "Jeśli trafisz co najmniej 3 liczby, jesteś zwycięzcą!"
     }
+  },
+  "error": {
+    "six-numbers-required": "Wymagane jest podanie 6 cyfr",
+    "numbers-between": "Liczby muszą być pomiędzy 1 a 99",
+    "different-numbers": "Wymagane jest 6 różnych liczb"
   }
 }
