@@ -6,9 +6,11 @@
       <mat-icon>nightlight</mat-icon>
     </button>
     <span class="spacer"></span>
-    <button color="tertiary" mat-button routerLink="/">{{ "core.home" | translate }}</button>
-    <button mat-button routerLink="/play">{{ "core.play" | translate }}</button>
-    <button mat-button routerLink="/results">{{ "core.results" | translate }}</button>
+    <button [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" mat-button
+            routerLink="/">{{ "core.home" | translate }}
+    </button>
+    <button routerLinkActive="active-link" mat-button routerLink="/play">{{ "core.play" | translate }}</button>
+    <button routerLinkActive="active-link" mat-button routerLink="/results">{{ "core.results" | translate }}</button>
     <mat-button-toggle-group
       class="btn-lang-group"
       name="language"
@@ -17,7 +19,8 @@
       [hideSingleSelectionIndicator]="{hideSingleSelectionIndicator}"
     >
       @for (l of languages; track l) {
-        <mat-button-toggle class="btn-lang" (click)="onChangeLanguageClick(l)" value="{{l}}">{{ l.toUpperCase() }}</mat-button-toggle>
+        <mat-button-toggle class="btn-lang" (click)="onChangeLanguageClick(l)" value="{{l}}">{{ l.toUpperCase() }}
+        </mat-button-toggle>
       }
     </mat-button-toggle-group>
   </mat-toolbar>
