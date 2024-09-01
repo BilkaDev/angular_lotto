@@ -9,7 +9,7 @@ $theme: mat.define-theme((
     tertiary: mat.$orange-palette,
   ),
   typography: (
-    bold-weight: 900
+    bold-weight: 800
   ),
   density: (
     scale: 0
@@ -19,11 +19,27 @@ $theme: mat.define-theme((
 [data-theme="light"] {
   --main-background-color: #f8f8f8;
   --main-font-color: black;
-  --home-card-background-color: white;
+  --card-background-color: white;
+  --card-font-color: black;
+  --btn-secondary-color: black;
+  --btn-secondary-background-color: white;
+  --btn-secondary-color-hover: black;
+  --play-btn-submit: #464400;
+  --mdc-filled-text-field-container-color: #f1f1f1;
 }
 
 [data-theme="dark"] {
   --main-background-color: #0c0c0c;
   --main-font-color: white;
-  --home-card-background-color: #1c1c1c;
+  --card-background-color: #1c1c1c;
+  --card-font-color: white;
+  --btn-secondary-color: white;
+  --btn-secondary-background-color: black;
+  --play-btn-submit: #0CDDDD;
+  --mdc-filled-text-field-container-color: #3f4948;
+}
+
+.mat-secondary {
+  color: var(--btn-secondary-color);
+  background-color: var(--btn-secondary-background-color);
 }
