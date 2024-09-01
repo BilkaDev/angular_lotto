@@ -22,6 +22,20 @@
   "error": {
     "six-numbers-required": "Wymagane jest podanie 6 cyfr",
     "numbers-between": "Liczby muszą być pomiędzy 1 a 99",
-    "different-numbers": "Wymagane jest 6 różnych liczb"
+    "different-numbers": "Wymagane jest 6 różnych liczb",
+    "bad-request": "Złe Żądanie",
+    "bad-request-desc": "Serwer nie mógł zrozumieć żądania z powodu nieprawidłowej składni.",
+    "unauthorized": "Nieautoryzowany",
+    "unauthorized-desc": "Nie masz uprawnień do dostępu do tego zasobu.",
+    "forbidden": "Zabronione",
+    "forbidden-desc": "Nie masz pozwolenia na dostęp do tego zasobu.",
+    "not-found": "Nie Znaleziono",
+    "not-found-desc": "Żądany zasób nie został znaleziony na tym serwerze.",
+    "500": "Coś Poszło Nie Tak",
+    "500-desc": "Serwer napotkał błąd i nie mógł zrealizować twojego żądania.",
+    "503": "Coś Poszło Nie Tak",
+    "503-desc": "Serwer jest obecnie niedostępny (przeciążony lub wyłączony). Proszę spróbować ponownie później.",
+    "unknown-error": "Coś Poszło Nie Tak",
+    "unknown-error-desc": "Wystąpił nieoczekiwany błąd. Proszę spróbować ponownie."
   }
 }

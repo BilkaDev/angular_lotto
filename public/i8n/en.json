@@ -22,6 +22,20 @@
   "error": {
     "six-numbers-required": "6 numbers are required",
     "numbers-between": "numbers must be between 1 and 99",
-    "different-numbers": "6 different numbers are required"
+    "different-numbers": "6 different numbers are required",
+    "bad-request": "Bad Request",
+    "bad-request-desc": "The server could not understand the request due to invalid syntax.",
+    "unauthorized": "Unauthorized",
+    "unauthorized-desc": "You are not authorized to access this resource.",
+    "forbidden": "Forbidden",
+    "forbidden-desc": "You do not have permission to access this resource.",
+    "not-found":"Not Found",
+    "not-found-desc":"The requested resource could not be found on this server.",
+    "500": "Something Went Wrong",
+    "500-desc": "The server encountered an error and could not complete your request.",
+    "503": "Something Went Wrong",
+    "503-desc": "The server is currently unavailable (overloaded or down). Please try again later.",
+    "unknown-error": "Something Went Wrong",
+    "unknown-error-desc": "An unexpected error occurred. Please try again."
   }
 }
