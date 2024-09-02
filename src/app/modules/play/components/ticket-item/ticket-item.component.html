@@ -4,16 +4,16 @@
     <mat-card-subtitle class="subtitle">Copy the ticket ID by clicking on icon</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content class="content">
-    <div class="ticket-id">
+    <div class="info">
       <div class="left">Ticket ID:</div>
       <div class="right">{{ ticketId }}
         <mat-icon (click)="copyTicketId()">content_paste</mat-icon>
       </div>
     </div>
-    <div class="ticket-id"><div class="left">Draw date:</div>
+    <div class="info"><div class="left">Draw date:</div>
       <div class="right">{{ drawDate }}</div>
     </div>
-    <div class="ticket-id"><div class="left">Numbers:</div>
+    <div class="info"><div class="left">Numbers:</div>
       <div class="right">
         {{ numbers }}
       </div>

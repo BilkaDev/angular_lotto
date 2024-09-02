@@ -1,8 +1,9 @@
 import { TestBed } from "@angular/core/testing";
 
-import { TicketService } from "./ticket.service";
 import { HttpClientModule } from "@angular/common/http";
 import { TranslateTestingModule } from "ngx-translate-testing";
+
+import { TicketService } from "./ticket.service";
 import enJson from "../../../../public/i8n/en.json";
 
 const translateTestingModule = () =>
