@@ -1,52 +1,34 @@
-import { Component } from "@angular/core";
-import { MatCardModule } from "@angular/material/card";
-import { MatButtonModule } from "@angular/material/button";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { FormsModule } from "@angular/forms";
-import { NgForOf } from "@angular/common";
-import { TranslateService } from "@ngx-translate/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { NgIf } from "@angular/common";
 
-import { SnackbarService } from "../shared/ui/snackbar/snackbar.service";
-import { TicketDate } from "../core/models/ticket.model";
+import { Ticket } from "../core/models/ticket.model";
 
-import { ValidateService } from "./validate.service";
-import { RandomNumbersService } from "./random-numbers.service";
+import { TicketItemComponent } from "./components/ticket-item/ticket-item.component";
+import { TicketFormComponent } from "./components/ticket-form/ticket-form.component";
+import { TicketService } from "./ticket.service";
 
 @Component({
   selector: "app-play",
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule, NgForOf],
+  imports: [TicketFormComponent, NgIf, TicketItemComponent],
   templateUrl: "./play.component.html",
   styleUrl: "./play.component.scss",
 })
-export class PlayComponent {
-  ticketData: TicketDate = { numbers: [] };
+export class PlayComponent implements OnInit, OnDestroy {
+  ticket: Ticket | null = null;
+  sub!: Subscription;
 
-  constructor(
-    private validateService: ValidateService,
-    private snackbar: SnackbarService,
-    private translate: TranslateService,
-    private randomNumberService: RandomNumbersService
-  ) {}
+  constructor(private ticketService: TicketService) {}
 
-  updateNumber(index: number, value: string) {
-    const num = Number(value);
-    if (this.validateService.validateNumber(num)) {
-      this.ticketData.numbers[index] = num;
-    }
+  ngOnInit(): void {
+    this.sub = this.ticketService.ticket.subscribe({
+      next: (value) => (this.ticket = value),
+    });
   }
 
-  onPlay() {
-    const errorMessage = this.validateService.validateNumbers(this.ticketData.numbers);
-    if (errorMessage) {
-      const translatedErrorMessage = this.translate.instant(errorMessage);
-      this.snackbar.openSnackBar(translatedErrorMessage, true);
-      return;
-    }
-  }
-  setRandomNumbers() {
-    const numbers = this.randomNumberService.generateRandomNumbers(6, 1, 99);
-    this.ticketData = { numbers };
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+    this.ticketService.clearTicket();
   }
 }

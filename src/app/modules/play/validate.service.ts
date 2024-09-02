@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
-import { TicketDate } from "../core/models/ticket.model";
+import { TicketData } from "../core/models/ticket.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class ValidateService {
-  validateNumbers(numbers: TicketDate["numbers"]) {
+  validateNumbers(numbers: TicketData["numbers"]) {
     if (numbers.length != 6) {
       return "error.six-numbers-required";
     }
