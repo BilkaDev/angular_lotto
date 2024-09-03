@@ -19,6 +19,7 @@ import { NgForOf } from "@angular/common";
 
 import { TicketService } from "../../ticket.service";
 import { Ticket } from "../../../core/models/ticket.model";
+import { CardComponent } from "../../../shared/ui/card/card.component";
 
 @Component({
   selector: "app-ticket-item",
@@ -37,6 +38,7 @@ import { Ticket } from "../../../core/models/ticket.model";
     MatInput,
     NgForOf,
     ReactiveFormsModule,
+    CardComponent,
   ],
   templateUrl: "./ticket-item.component.html",
   styleUrl: "./ticket-item.component.scss",

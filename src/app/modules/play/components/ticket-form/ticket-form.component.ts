@@ -12,11 +12,12 @@ import { SnackbarService } from "../../../shared/ui/snackbar/snackbar.service";
 import { TranslateService } from "@ngx-translate/core";
 import { RandomNumbersService } from "../../random-numbers.service";
 import { TicketService } from "../../ticket.service";
+import { CardComponent } from "../../../shared/ui/card/card.component";
 
 @Component({
   selector: "app-ticket-form",
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule, NgForOf],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule, NgForOf, CardComponent],
   templateUrl: "./ticket-form.component.html",
   styleUrl: "./ticket-form.component.scss",
 })

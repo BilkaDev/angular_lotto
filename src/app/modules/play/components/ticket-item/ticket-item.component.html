@@ -1,26 +1,27 @@
-<mat-card class="ticket-item-card" appearance="outlined">
-  <mat-card-header class="header">
-    <mat-card-title class="title"> Lottery ticket</mat-card-title>
-    <mat-card-subtitle class="subtitle">Copy the ticket ID by clicking on icon</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content class="content">
+<app-card
+  title="Lottery ticket"
+  subtitle="Copy the ticket ID by clicking on icon"
+>
+  <div card-content class="content">
     <div class="info">
       <div class="left">Ticket ID:</div>
       <div class="right">{{ ticketId }}
         <mat-icon (click)="copyTicketId()">content_paste</mat-icon>
       </div>
     </div>
-    <div class="info"><div class="left">Draw date:</div>
+    <div class="info">
+      <div class="left">Draw date:</div>
       <div class="right">{{ drawDate }}</div>
     </div>
-    <div class="info"><div class="left">Numbers:</div>
+    <div class="info">
+      <div class="left">Numbers:</div>
       <div class="right">
         {{ numbers }}
       </div>
     </div>
-  </mat-card-content>
-  <mat-card-actions class="btn-group">
+  </div>
+  <div card-actions class="btn-group">
     <button (click)="routerTo('play')" color="next" mat-button>< Play</button>
     <button (click)="routerTo('results')" color="next" mat-button>Check results ></button>
-  </mat-card-actions>
-</mat-card>
+  </div>
+</app-card>

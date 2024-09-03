@@ -1,45 +1,31 @@
 @import "themes";
 
-.play-card {
-  width: 100%;
-  max-width: 400px;
-  background-color: var(--card-background-color);
-  color: var(--card-font-color)
-}
+.form-content {
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 
-.ticket-form {
-  .form-title {
-    margin-top: 5px;
-    text-align: center;
-    font-weight: bold;
-  }
-  .form-subtitle {
-    margin-top: 15px;
-    color: var(--card-font-color)
-  }
-  .form-content {
-    margin-top: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    .form-field {
+  .form-field {
+    flex: 1 1 calc(33% - 30px);
 
-      flex: 1 1 calc(33% - 30px);
-      input {
-        text-align: center;
-        color: var(--card-font-color)
-      }
+    input {
+      text-align: center;
+      color: var(--card-font-color)
     }
   }
-  .btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  .mat-submit {
-    color: var(--play-btn-submit);
-    font-weight: bold;
-  }
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.mat-submit {
+  color: var(--play-btn-submit);
+  font-weight: bold;
 }

@@ -1,0 +1,16 @@
+.card {
+  background-color: var(--card-background-color);
+  color: var(--card-font-color);
+  padding: 10px;
+
+  .title {
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    margin-top: 15px;
+    color: var(--card-font-color)
+  }
+}
