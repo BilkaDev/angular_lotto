@@ -3,6 +3,11 @@
   color: var(--card-font-color);
   padding: 10px;
 
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+
   .title {
     margin-top: 5px;
     text-align: center;

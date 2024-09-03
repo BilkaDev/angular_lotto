@@ -1,4 +1,8 @@
 @import "themes";
+:host {
+  width: 100%;
+  max-width: 400px;
+}
 
 .form-content {
   margin-top: 30px;

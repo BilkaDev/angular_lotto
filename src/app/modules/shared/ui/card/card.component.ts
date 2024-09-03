@@ -11,7 +11,7 @@ import {
 } from "@angular/material/card";
 import { MatFormField } from "@angular/material/form-field";
 import { MatInput } from "@angular/material/input";
-import { NgForOf, NgStyle } from "@angular/common";
+import { NgForOf } from "@angular/common";
 
 @Component({
   selector: "app-card",
@@ -29,7 +29,6 @@ import { NgForOf, NgStyle } from "@angular/common";
     MatInput,
     NgForOf,
     ReactiveFormsModule,
-    NgStyle,
   ],
   templateUrl: "./card.component.html",
   styleUrl: "./card.component.scss",
@@ -37,6 +36,4 @@ import { NgForOf, NgStyle } from "@angular/common";
 export class CardComponent {
   @Input() title!: string;
   @Input() subtitle!: string;
-  @Input() width = "100%";
-  @Input() maxWidth = "100%";
 }

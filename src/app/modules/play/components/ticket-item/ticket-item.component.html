@@ -1,27 +1,27 @@
 <app-card
-  title="Lottery ticket"
-  subtitle="Copy the ticket ID by clicking on icon"
+  [title]="'play.ticketItem.title' | translate"
+  [subtitle]="'play.ticketItem.subtitle' | translate"
 >
   <div card-content class="content">
     <div class="info">
-      <div class="left">Ticket ID:</div>
+      <div class="left">{{ "play.ticketItem.ticketId" | translate }}:</div>
       <div class="right">{{ ticketId }}
         <mat-icon (click)="copyTicketId()">content_paste</mat-icon>
       </div>
     </div>
     <div class="info">
-      <div class="left">Draw date:</div>
+      <div class="left">{{ "play.ticketItem.drawDate" | translate }}:</div>
       <div class="right">{{ drawDate }}</div>
     </div>
     <div class="info">
-      <div class="left">Numbers:</div>
+      <div class="left">{{ "play.ticketItem.numbers" | translate }}:</div>
       <div class="right">
         {{ numbers }}
       </div>
     </div>
   </div>
   <div card-actions class="btn-group">
-    <button (click)="routerTo('play')" color="next" mat-button>< Play</button>
-    <button (click)="routerTo('results')" color="next" mat-button>Check results ></button>
+    <button (click)="routerTo('play')" color="next" mat-button><{{ "play.ticketItem.play" | translate }}</button>
+    <button (click)="routerTo('results')" color="next" mat-button>{{ "play.ticketItem.results" | translate }}></button>
   </div>
 </app-card>
