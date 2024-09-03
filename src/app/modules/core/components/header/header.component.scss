@@ -1,3 +1,7 @@
+@use "@angular/material" as mat;
+
+@import "themes";
+
 :host{
   position: relative;
 }
@@ -21,4 +25,8 @@
   .btn-lang {
     color: var(--main-font-color);
   }
+}
+
+.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base.active-link {
+  color: mat.get-theme-color($theme, primary, 80);
 }

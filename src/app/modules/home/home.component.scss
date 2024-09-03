@@ -1,6 +1,9 @@
 header {
-  margin: 2rem 6rem;
+  margin: 2rem auto;
   text-align: center;
+  @media (max-width: 600px) {
+    max-width: 250px;
+  }
 }
 
 .container {
@@ -19,7 +22,7 @@ header {
   }
 
   .card {
-    background-color: var(--home-card-background-color);
+    background-color: var(--card-background-color);
     margin: 0 .5rem;
     padding: 20px;
     border-radius: 5px;

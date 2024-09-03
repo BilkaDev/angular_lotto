@@ -1,0 +1,24 @@
+<app-card
+  [title]="'play.ticketForm.title' | translate"
+  [subtitle]="'play.ticketForm.subtitle' | translate"
+  maxWidth="400px"
+>
+  >
+  <div card-content>
+    <form class="form-content" id="ticket-form" (ngSubmit)="onPlay()">
+      <mat-form-field class="form-field" *ngFor="let i of [0,1,2,3,4,5]">
+        <input matInput required min="1" max="99" type="number" name="{{i}}"
+               [(ngModel)]="ticketData.numbers[i]" [ngModelOptions]="{standalone: true}"
+               (ngModelChange)="updateNumber(i, $event)"
+        >
+      </mat-form-field>
+    </form>
+  </div>
+  <div card-actions class="btn-group">
+    <button (click)="setRandomNumbers()" color="secondary" mat-stroked-button type="button"
+            mat-button>{{ "play.ticketForm.random" | translate }}
+    </button>
+    <button form="ticket-form" color="submit" type="submit" mat-button>{{ "play.ticketForm.submit" | translate }}
+    </button>
+  </div>
+</app-card>
