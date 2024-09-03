@@ -29,13 +29,30 @@
     "unauthorized-desc": "You are not authorized to access this resource.",
     "forbidden": "Forbidden",
     "forbidden-desc": "You do not have permission to access this resource.",
-    "not-found":"Not Found",
-    "not-found-desc":"The requested resource could not be found on this server.",
+    "not-found": "Not Found",
+    "not-found-desc": "The requested resource could not be found on this server.",
     "500": "Something Went Wrong",
     "500-desc": "The server encountered an error and could not complete your request.",
     "503": "Something Went Wrong",
     "503-desc": "The server is currently unavailable (overloaded or down). Please try again later.",
     "unknown-error": "Something Went Wrong",
     "unknown-error-desc": "An unexpected error occurred. Please try again."
+  },
+  "play": {
+    "ticketForm": {
+      "title": "Play the lottery",
+      "subtitle": "Enter your lucky numbers or just fill the fields randomly.",
+      "submit": "Submit",
+      "random": "Random"
+    },
+    "ticketItem": {
+      "title": "Lottery ticket",
+      "subtitle": "Copy the ticket ID by clicking on icon.",
+      "play": "Play",
+      "results": "Results",
+      "drawDate": "Draw date",
+      "ticketId": "TicketID",
+      "numbers": "Numbers"
+    }
   }
 }

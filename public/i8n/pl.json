@@ -37,5 +37,22 @@
     "503-desc": "Serwer jest obecnie niedostępny (przeciążony lub wyłączony). Proszę spróbować ponownie później.",
     "unknown-error": "Coś Poszło Nie Tak",
     "unknown-error-desc": "Wystąpił nieoczekiwany błąd. Proszę spróbować ponownie."
+  },
+  "play": {
+    "ticketForm": {
+      "title": "Graj w loterii",
+      "subtitle": "Wprowadź swoje szczęśliwe liczby lub wypełnij pola losowo.",
+      "submit": "Wyślij",
+      "random": "Losuj"
+    },
+    "ticketItem": {
+      "title": "Kupon loterii",
+      "subtitle": "Skopiuj kuponID, klikając ikonę.",
+      "play": "Graj",
+      "results": "Wyniki",
+      "drawDate": "Data losowania",
+      "ticketId": "KuponID",
+      "numbers": "Liczby"
+    }
   }
 }

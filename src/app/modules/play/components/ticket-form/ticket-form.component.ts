@@ -5,11 +5,11 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { FormsModule } from "@angular/forms";
 import { NgForOf } from "@angular/common";
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
 
 import { TicketData } from "../../../core/models/ticket.model";
 import { ValidateService } from "../../validate.service";
 import { SnackbarService } from "../../../shared/ui/snackbar/snackbar.service";
-import { TranslateService } from "@ngx-translate/core";
 import { RandomNumbersService } from "../../random-numbers.service";
 import { TicketService } from "../../ticket.service";
 import { CardComponent } from "../../../shared/ui/card/card.component";
@@ -17,7 +17,16 @@ import { CardComponent } from "../../../shared/ui/card/card.component";
 @Component({
   selector: "app-ticket-form",
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule, NgForOf, CardComponent],
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    NgForOf,
+    CardComponent,
+    TranslateModule,
+  ],
   templateUrl: "./ticket-form.component.html",
   styleUrl: "./ticket-form.component.scss",
 })

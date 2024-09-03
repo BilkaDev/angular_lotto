@@ -16,6 +16,7 @@ import {
 import { MatFormField } from "@angular/material/form-field";
 import { MatInput } from "@angular/material/input";
 import { NgForOf } from "@angular/common";
+import { TranslateModule } from "@ngx-translate/core";
 
 import { TicketService } from "../../ticket.service";
 import { Ticket } from "../../../core/models/ticket.model";
@@ -39,6 +40,7 @@ import { CardComponent } from "../../../shared/ui/card/card.component";
     NgForOf,
     ReactiveFormsModule,
     CardComponent,
+    TranslateModule,
   ],
   templateUrl: "./ticket-item.component.html",
   styleUrl: "./ticket-item.component.scss",
