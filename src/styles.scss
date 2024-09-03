@@ -2,9 +2,7 @@
 @import "themes";
 @import "snackbar";
 
-html {
-  @include mat.all-component-themes($theme);
-}
+
 
 *::before,
 *::after {

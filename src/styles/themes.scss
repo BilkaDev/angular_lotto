@@ -1,4 +1,9 @@
 @use '@angular/material' as mat;
+@use '@angular/material/core/theming/definition';
+@use '@angular/material/core/theming/color-api-backwards-compatibility';
+@use '@angular/material/core/theming/palettes';
+@use '@angular/material/core/theming/all-theme';
+@use '@angular/material/core/typography/typography';
 
 @include mat.core();
 
@@ -16,6 +21,13 @@ $theme: mat.define-theme((
   )
 ));
 
+html {
+  @include mat.all-component-themes($theme);
+}
+
+@include color-api-backwards-compatibility.color-variants-backwards-compatibility($theme);
+@include typography.typography-hierarchy($theme);
+
 [data-theme="light"] {
   --main-background-color: #f8f8f8;
   --main-font-color: black;
@@ -24,7 +36,7 @@ $theme: mat.define-theme((
   --btn-secondary-color: black;
   --btn-secondary-background-color: white;
   --btn-secondary-color-hover: black;
-  --play-btn-submit: #464400;
+  --play-btn-submit: #595702;
   --mdc-filled-text-field-container-color: #f1f1f1;
 }
 
