@@ -106,6 +106,7 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
+                "node_modules/",
                 "src/styles"
               ]
             },
