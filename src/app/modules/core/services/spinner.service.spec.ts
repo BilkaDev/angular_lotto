@@ -3,7 +3,7 @@ import { TestBed } from "@angular/core/testing";
 import { SpinnerService } from "./spinner.service";
 import { Subscription } from "rxjs";
 
-fdescribe("SpinnerService", () => {
+describe("SpinnerService", () => {
   let service: SpinnerService;
   let sub: Subscription;
 
