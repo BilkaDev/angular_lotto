@@ -31,7 +31,7 @@ export class TicketService {
       catchError((err) => {
         const errorMessage = this.errorParser.parseErrorFromStatus(err.status);
         this.snackbar.openSnackBar(errorMessage, true);
-        return throwError(() => new Error(err));
+        return throwError(err);
       })
     );
   }
