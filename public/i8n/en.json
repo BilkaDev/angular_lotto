@@ -54,5 +54,20 @@
       "ticketId": "TicketID",
       "numbers": "Numbers"
     }
+  },
+  "result": {
+    "WAIT_MESSAGE": "Results are being calculated, please come back later",
+    "WIN_MESSAGE": "Congratulations, you won!",
+    "LOSE_MESSAGE": "No luck, try again!",
+    "ALREADY_CHECKED": "You have already checked your ticket, please come back later",
+    "HASH_DOES_NOT_EXIST_MESSAGE": "Given ticket does not exist",
+    "drawDate": "Draw date",
+    "numbers": "Numbers",
+    "wonNumbers": "Won numbers",
+    "hitNumbers": "Hit numbers",
+    "submit": "Submit",
+    "label": "Insert your ticketID",
+    "title": "Check results",
+    "subtitle": "Winning numbers are drawn every Saturday"
   }
 }

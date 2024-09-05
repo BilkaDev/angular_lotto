@@ -54,5 +54,20 @@
       "ticketId": "KuponID",
       "numbers": "Liczby"
     }
+  },
+  "result": {
+    "WAIT_MESSAGE": "Wyniki są obliczane, prosimy o powrót później",
+    "WIN_MESSAGE": "Gratulacje, Wygrałeś!",
+    "LOSE_MESSAGE": "Przegrana, spróbuj ponownie!",
+    "ALREADY_CHECKED": "Kupon został już sprawdzony, wróć później",
+    "HASH_DOES_NOT_EXIST_MESSAGE": "Podany kupon nie istnieje",
+    "drawDate": "Data losowania",
+    "numbers": "Liczby",
+    "wonNumbers": "Zwycięskie liczby",
+    "hitNumbers": "Trafione liczby",
+    "submit": "Wyślij",
+    "label": "Wpisz Kupon ID",
+    "title": "Sprawdź wynik",
+    "subtitle": "Zwycięskie numery losowane są w każdą sobotę"
   }
 }
