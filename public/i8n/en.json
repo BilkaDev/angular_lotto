@@ -36,7 +36,8 @@
     "503": "Something Went Wrong",
     "503-desc": "The server is currently unavailable (overloaded or down). Please try again later.",
     "unknown-error": "Something Went Wrong",
-    "unknown-error-desc": "An unexpected error occurred. Please try again."
+    "unknown-error-desc": "An unexpected error occurred. Please try again.",
+    "resultNotFound": "Given ticket doest not exist"
   },
   "play": {
     "ticketForm": {

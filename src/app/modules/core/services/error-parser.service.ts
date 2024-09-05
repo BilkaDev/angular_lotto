@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
+import { errorCodeMap, ErrorResponse } from "../models/ErrorResponse";
 
 @Injectable({
   providedIn: "root",
@@ -26,6 +27,21 @@ export class ErrorParserService {
     }
   }
 
+  parseError(
+    error: unknown,
+    opt?: {
+      message: string;
+    }
+  ) {
+    if (this.isErrorKey(error) && ErrorResponse.isErrorResponse(error.error)) {
+      const code = error.error.code;
+      if (errorCodeMap[code] != undefined) {
+        return this.translate.instant(errorCodeMap[code]);
+      }
+    }
+    return this.parseErrorFromStatus(this.isStatusKey(error) ? error.status : 0, opt?.message);
+  }
+
   private formatMessage(title: string, serverMessage?: string, description?: string): string {
     let formattedMessage = `${this.translate.instant(title)}: `;
     if (serverMessage) {
@@ -35,5 +51,13 @@ export class ErrorParserService {
       formattedMessage += `${this.translate.instant(description)}`;
     }
     return formattedMessage;
+  }
+
+  private isStatusKey(err: unknown): err is { status: number } {
+    return typeof err === "object" && err !== null && "status" in err;
+  }
+
+  private isErrorKey(err: unknown): err is { error: unknown } {
+    return typeof err === "object" && err !== null && "error" in err;
   }
 }

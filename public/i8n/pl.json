@@ -36,7 +36,8 @@
     "503": "Coś Poszło Nie Tak",
     "503-desc": "Serwer jest obecnie niedostępny (przeciążony lub wyłączony). Proszę spróbować ponownie później.",
     "unknown-error": "Coś Poszło Nie Tak",
-    "unknown-error-desc": "Wystąpił nieoczekiwany błąd. Proszę spróbować ponownie."
+    "unknown-error-desc": "Wystąpił nieoczekiwany błąd. Proszę spróbować ponownie.",
+    "resultNotFound": "Podany kupon nie istnieje"
   },
   "play": {
     "ticketForm": {
