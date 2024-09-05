@@ -1,7 +1,6 @@
 <app-card
   [title]="'play.ticketForm.title' | translate"
   [subtitle]="'play.ticketForm.subtitle' | translate"
-  maxWidth="400px"
 >
   >
   <div card-content>
@@ -18,7 +17,7 @@
     <button (click)="setRandomNumbers()" color="secondary" mat-stroked-button type="button"
             mat-button>{{ "play.ticketForm.random" | translate }}
     </button>
-    <button form="ticket-form" color="submit" type="submit" mat-button>{{ "play.ticketForm.submit" | translate }}
+    <button form="ticket-form" color="primary" type="submit" mat-button>{{ "play.ticketForm.submit" | translate }}
     </button>
   </div>
 </app-card>

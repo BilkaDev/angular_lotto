@@ -11,7 +11,8 @@
     </div>
     <div class="info">
       <div class="left">{{ "play.ticketItem.drawDate" | translate }}:</div>
-      <div class="right">{{ drawDate }}</div>
+      <div class="right">{{ ticket?.drawDate | date }}
+      </div>
     </div>
     <div class="info">
       <div class="left">{{ "play.ticketItem.numbers" | translate }}:</div>
@@ -21,7 +22,8 @@
     </div>
   </div>
   <div card-actions class="btn-group">
-    <button (click)="routerTo('play')" color="next" mat-button><{{ "play.ticketItem.play" | translate }}</button>
-    <button (click)="routerTo('results')" color="next" mat-button>{{ "play.ticketItem.results" | translate }}></button>
+    <button (click)="routerTo('play')" color="primary" mat-button><{{ "play.ticketItem.play" | translate }}</button>
+    <button (click)="routerTo('results')" color="primary" mat-button>{{ "play.ticketItem.results" | translate }}>
+    </button>
   </div>
 </app-card>
