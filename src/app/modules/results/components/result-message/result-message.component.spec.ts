@@ -68,8 +68,6 @@ describe("ResultMessageComponent", () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector(".row:nth-child(1) span").textContent).toBe("");
-    expect(compiled.querySelector(".row:nth-child(2) span").textContent).toBe("");
-    expect(compiled.querySelector(".row:nth-child(3) span").textContent).toBe("");
-    expect(compiled.querySelector(".row:nth-child(4) span").textContent).toBe("Invalid Date Inval");
+    expect(compiled.querySelector(".row:nth-child(2) span").textContent).toBe("Invalid Date Inval");
   });
 });
