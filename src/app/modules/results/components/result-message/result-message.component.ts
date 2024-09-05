@@ -4,11 +4,12 @@ import { TranslateModule } from "@ngx-translate/core";
 
 import { Result } from "../../../core/models/result.model";
 import { DatePipe } from "../../../core/pipes/date.pipe";
+import { NgIf } from "@angular/common";
 
 @Component({
   selector: "app-result-message",
   standalone: true,
-  imports: [TranslateModule, DatePipe, MatIcon],
+  imports: [TranslateModule, DatePipe, MatIcon, NgIf],
   templateUrl: "./result-message.component.html",
   styleUrl: "./result-message.component.scss",
 })

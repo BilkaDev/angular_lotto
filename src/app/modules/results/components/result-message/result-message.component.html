@@ -5,10 +5,10 @@
   <div class="row">
     <b>{{ "result.numbers" | translate }}:</b> <span>{{ result.numbers }}</span>
   </div>
-  <div class="row">
+  <div *ngIf="result.wonNumbers" class="row">
     <b>{{ "result.wonNumbers" | translate }}:</b> <span>{{ result.wonNumbers }}</span>
   </div>
-  <div class="row">
+  <div *ngIf="result.hitNumbers" class="row">
     <b>{{ "result.hitNumbers" | translate }}:</b> <span>{{ result.hitNumbers }}</span>
   </div>
   <div class="row">
