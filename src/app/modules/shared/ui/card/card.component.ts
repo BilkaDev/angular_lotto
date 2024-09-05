@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { MatButton } from "@angular/material/button";
 import {
   MatCard,
@@ -11,7 +11,7 @@ import {
 } from "@angular/material/card";
 import { MatFormField } from "@angular/material/form-field";
 import { MatInput } from "@angular/material/input";
-import { NgForOf } from "@angular/common";
+import { NgForOf, NgIf } from "@angular/common";
 
 @Component({
   selector: "app-card",
@@ -28,7 +28,7 @@ import { NgForOf } from "@angular/common";
     MatFormField,
     MatInput,
     NgForOf,
-    ReactiveFormsModule,
+    NgIf,
   ],
   templateUrl: "./card.component.html",
   styleUrl: "./card.component.scss",
