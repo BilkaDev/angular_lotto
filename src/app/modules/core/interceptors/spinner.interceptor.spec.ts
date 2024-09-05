@@ -26,7 +26,7 @@ describe("spinnerInterceptor", () => {
     expect(interceptor).toBeTruthy();
   });
 
-  fit("should show and then hide spinner on request completion", (done) => {
+  it("should show and then hide spinner on request completion", (done) => {
     interceptor({} as HttpRequest<unknown>, nextMock)
       .pipe(
         finalize(() => {
