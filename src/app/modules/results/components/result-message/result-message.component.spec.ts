@@ -9,7 +9,7 @@ const translateTestingModule = () =>
   TranslateTestingModule.withTranslations({
     enJson,
   });
-fdescribe("ResultMessageComponent", () => {
+describe("ResultMessageComponent", () => {
   let component: ResultMessageComponent;
   let fixture: ComponentFixture<ResultMessageComponent>;
 
