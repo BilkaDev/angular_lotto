@@ -2,7 +2,12 @@
   "core": {
     "home": "Strona główna",
     "play": "Graj",
-    "results": "Wyniki"
+    "results": "Wyniki",
+    "formService": {
+      "required": "Musisz wpisać jakąś wartość",
+      "minLength": "Przekazałeś za mało znaków",
+      "maxLength": "Przekazałeś za dużo znaków"
+    }
   },
   "home": {
     "header": "Witamy w AngularLotto",

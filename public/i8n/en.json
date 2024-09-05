@@ -2,7 +2,12 @@
   "core": {
     "home": "Home",
     "play": "Play",
-    "results": "Results"
+    "results": "Results",
+    "formService": {
+      "required": "You must enter a value",
+      "minLength": "You have entered too few characters",
+      "maxLength": "You have entered too many characters"
+    }
   },
   "home": {
     "header": "Welcome to AngularLotto",

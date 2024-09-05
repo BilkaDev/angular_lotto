@@ -1,5 +1,5 @@
 export const errorCodeMap: Record<string, string> = {
-  PLAYER_RESULT_NOT_FOUND: "error.resultNotFound",
+  TICKET_NOT_FOUND: "error.resultNotFound",
 };
 
 export class ErrorResponse {
