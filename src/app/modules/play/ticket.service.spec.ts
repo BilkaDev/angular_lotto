@@ -14,7 +14,7 @@ const translateTestingModule = () =>
   TranslateTestingModule.withTranslations({
     enJson,
   });
-fdescribe("TicketService", () => {
+describe("TicketService", () => {
   let service: TicketService;
   let httpTesting: HttpTestingController;
   let snackbarServiceSpy: jasmine.SpyObj<SnackbarService>;
