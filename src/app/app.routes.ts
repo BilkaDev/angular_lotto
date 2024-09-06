@@ -13,4 +13,8 @@ export const routes: Routes = [
     path: "results",
     loadComponent: () => import("./modules/results/results.component").then((c) => c.ResultsComponent),
   },
+  {
+    path: "auth",
+    loadChildren: () => import("./modules/auth/auth.routes").then((m) => m.routes),
+  },
 ];
