@@ -5,8 +5,8 @@
     "results": "Wyniki",
     "formService": {
       "required": "Musisz wpisać jakąś wartość",
-      "minLength": "Przekazałeś za mało znaków",
-      "maxLength": "Przekazałeś za dużo znaków"
+      "minLength": "Minimalna ilość znaków",
+      "maxLength": "Maksymalan ilość znaków"
     }
   },
   "home": {

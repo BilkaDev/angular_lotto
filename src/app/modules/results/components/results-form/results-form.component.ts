@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ErrorStateMatcher } from "@angular/material/core";
-import { FormControl, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModule, Validators } from "@angular/forms";
+import { FormControl, FormGroup, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
@@ -11,7 +11,8 @@ import { CardComponent } from "../../../shared/ui/card/card.component";
 import { ResultService } from "../../result.service";
 import { ResultMessageComponent } from "../result-message/result-message.component";
 import { Result } from "../../../core/models/result.model";
-import { FormService } from "../../../core/services/form.service";
+import { ResultsForm } from "../../../core/models/froms.model";
+import { FormsService } from "../../../core/services/forms.service";
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -38,20 +39,23 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrl: "./results-form.component.scss",
 })
 export class ResultsFormComponent {
-  ticketIdControl = new FormControl("", {
-    nonNullable: true,
-    validators: [Validators.minLength(8), Validators.maxLength(8), Validators.required],
-  });
+  resultsForm: FormGroup<ResultsForm>;
   matcher = new MyErrorStateMatcher();
   result: Result | null = null;
 
   constructor(
     private resultService: ResultService,
-    private formService: FormService
-  ) {}
+    private formsService: FormsService
+  ) {
+    this.resultsForm = this.formsService.initResultsForm();
+  }
+
+  get controls() {
+    return this.resultsForm.controls;
+  }
 
   onSubmit() {
-    this.resultService.getResult(this.ticketIdControl.getRawValue()).subscribe({
+    this.resultService.getResult(this.controls.ticketIdControl.getRawValue()).subscribe({
       next: (v) => {
         this.result = v;
       },
@@ -59,6 +63,6 @@ export class ResultsFormComponent {
   }
 
   getErrorMessage(control: FormControl) {
-    return this.formService.getErrorMessage(control);
+    return this.formsService.getErrorMessage(control);
   }
 }

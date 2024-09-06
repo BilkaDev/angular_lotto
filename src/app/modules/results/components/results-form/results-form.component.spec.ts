@@ -27,33 +27,33 @@ describe("ResultsFormComponent", () => {
   });
 
   it("disables the submit button when the form is invalid", () => {
-    component.ticketIdControl.setValue("");
+    component.controls.ticketIdControl.setValue("");
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector("button").disabled).toBeTrue();
   });
 
   it("enables the submit button when the form is valid", () => {
-    component.ticketIdControl.setValue("12345678");
+    component.controls.ticketIdControl.setValue("12345678");
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector("button").disabled).toBeFalse();
   });
 
   it("displays the error message when the form is invalid", () => {
-    component.ticketIdControl.setValue("");
-    component.ticketIdControl.markAsDirty();
+    component.controls.ticketIdControl.setValue("");
+    component.controls.ticketIdControl.markAsDirty();
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
 
     expect(compiled.querySelector("mat-error").textContent).toContain(
-      component.getErrorMessage(component.ticketIdControl)
+      component.getErrorMessage(component.controls.ticketIdControl)
     );
   });
 
   it("does not display the error message when the form is valid", () => {
-    component.ticketIdControl.setValue("12345678");
-    component.ticketIdControl.markAsDirty();
+    component.controls.ticketIdControl.setValue("12345678");
+    component.controls.ticketIdControl.markAsDirty();
 
     fixture.detectChanges();
     const compiled = fixture.nativeElement;

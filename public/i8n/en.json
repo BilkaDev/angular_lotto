@@ -5,8 +5,8 @@
     "results": "Results",
     "formService": {
       "required": "You must enter a value",
-      "minLength": "You have entered too few characters",
-      "maxLength": "You have entered too many characters"
+      "minLength": "Minimum number of characters",
+      "maxLength": "Maximum number of characters"
     }
   },
   "home": {
