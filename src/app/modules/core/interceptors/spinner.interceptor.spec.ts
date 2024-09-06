@@ -3,7 +3,7 @@ import { HttpEvent, HttpInterceptorFn, HttpRequest, HttpResponse } from "@angula
 
 import { spinnerInterceptor } from "./spinner.interceptor";
 import { SpinnerService } from "../services/spinner.service";
-import { Observable, of } from "rxjs";
+import { finalize, Observable, of } from "rxjs";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const nextMock = (req: HttpRequest<unknown>): Observable<HttpEvent<unknown>> => {
@@ -27,13 +27,18 @@ describe("spinnerInterceptor", () => {
   });
 
   it("should show and then hide spinner on request completion", (done) => {
-    interceptor({} as HttpRequest<unknown>, nextMock).subscribe({
-      next: () => {
-        expect(spinnerServiceSpy.show).toHaveBeenCalled();
-        expect(spinnerServiceSpy.hide).toHaveBeenCalled();
-        done();
-      },
-      error: done.fail,
-    });
+    interceptor({} as HttpRequest<unknown>, nextMock)
+      .pipe(
+        finalize(() => {
+          expect(spinnerServiceSpy.hide).toHaveBeenCalled();
+          done();
+        })
+      )
+      .subscribe({
+        next: () => {
+          expect(spinnerServiceSpy.show).toHaveBeenCalled();
+        },
+        error: done.fail,
+      });
   });
 });

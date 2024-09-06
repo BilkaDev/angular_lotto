@@ -19,3 +19,8 @@
     color: var(--card-font-color)
   }
 }
+
+
+.actions:is(:empty) {
+  display: none;
+}

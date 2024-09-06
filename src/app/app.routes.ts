@@ -9,4 +9,8 @@ export const routes: Routes = [
     path: "play",
     loadComponent: () => import("./modules/play/play.component").then((c) => c.PlayComponent),
   },
+  {
+    path: "results",
+    loadComponent: () => import("./modules/results/results.component").then((c) => c.ResultsComponent),
+  },
 ];

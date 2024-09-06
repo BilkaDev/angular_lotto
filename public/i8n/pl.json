@@ -2,7 +2,12 @@
   "core": {
     "home": "Strona główna",
     "play": "Graj",
-    "results": "Wyniki"
+    "results": "Wyniki",
+    "formService": {
+      "required": "Musisz wpisać jakąś wartość",
+      "minLength": "Minimalna ilość znaków",
+      "maxLength": "Maksymalan ilość znaków"
+    }
   },
   "home": {
     "header": "Witamy w AngularLotto",
@@ -36,7 +41,8 @@
     "503": "Coś Poszło Nie Tak",
     "503-desc": "Serwer jest obecnie niedostępny (przeciążony lub wyłączony). Proszę spróbować ponownie później.",
     "unknown-error": "Coś Poszło Nie Tak",
-    "unknown-error-desc": "Wystąpił nieoczekiwany błąd. Proszę spróbować ponownie."
+    "unknown-error-desc": "Wystąpił nieoczekiwany błąd. Proszę spróbować ponownie.",
+    "resultNotFound": "Podany kupon nie istnieje"
   },
   "play": {
     "ticketForm": {
@@ -54,5 +60,20 @@
       "ticketId": "KuponID",
       "numbers": "Liczby"
     }
+  },
+  "result": {
+    "WAIT_MESSAGE": "Wyniki są obliczane, prosimy o powrót później",
+    "WIN_MESSAGE": "Gratulacje, Wygrałeś!",
+    "LOSE_MESSAGE": "Przegrana, spróbuj ponownie!",
+    "ALREADY_CHECKED": "Kupon został już sprawdzony, wróć później",
+    "HASH_DOES_NOT_EXIST_MESSAGE": "Podany kupon nie istnieje",
+    "drawDate": "Data losowania",
+    "numbers": "Liczby",
+    "wonNumbers": "Zwycięskie liczby",
+    "hitNumbers": "Trafione liczby",
+    "submit": "Wyślij",
+    "label": "Wpisz Kupon ID",
+    "title": "Sprawdź wynik",
+    "subtitle": "Zwycięskie numery losowane są w każdą sobotę"
   }
 }

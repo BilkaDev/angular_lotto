@@ -1,7 +1,8 @@
-:host{
+:host {
   width: 100%;
   max-width: 400px;
 }
+
 .content {
   margin-top: 15px;
 
@@ -37,9 +38,4 @@
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-}
-
-.mat-next {
-  color: var(--play-btn-submit);
-  font-weight: bold;
 }

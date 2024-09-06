@@ -55,3 +55,7 @@ html {
   color: var(--btn-secondary-color);
   background-color: var(--btn-secondary-background-color);
 }
+
+body[data-theme="light"] .mat-primary {
+  color: #595702;
+}

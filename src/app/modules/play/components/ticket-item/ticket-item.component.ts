@@ -21,6 +21,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import { TicketService } from "../../ticket.service";
 import { Ticket } from "../../../core/models/ticket.model";
 import { CardComponent } from "../../../shared/ui/card/card.component";
+import { DatePipe } from "../../../core/pipes/date.pipe";
 
 @Component({
   selector: "app-ticket-item",
@@ -41,6 +42,7 @@ import { CardComponent } from "../../../shared/ui/card/card.component";
     ReactiveFormsModule,
     CardComponent,
     TranslateModule,
+    DatePipe,
   ],
   templateUrl: "./ticket-item.component.html",
   styleUrl: "./ticket-item.component.scss",
@@ -57,13 +59,6 @@ export class TicketItemComponent implements OnInit, OnDestroy {
 
   get numbers() {
     return this.ticket?.numbers ?? "";
-  }
-
-  get drawDate() {
-    const date = new Date(this.ticket?.drawDate ?? "").toLocaleDateString();
-    const time = new Date(this.ticket?.drawDate ?? "").toLocaleTimeString().slice(0, 5);
-
-    return `${date} ${time}`;
   }
 
   get ticketId() {
