@@ -1,8 +1,10 @@
 {
   "core": {
-    "home": "Strona główna",
+    "home": "Główna",
     "play": "Graj",
     "results": "Wyniki",
+    "login": "Logowanie",
+    "register": "Rejestracja",
     "formService": {
       "required": "Musisz wpisać jakąś wartość",
       "minLength": "Minimalna ilość znaków",

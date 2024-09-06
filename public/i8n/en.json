@@ -3,6 +3,8 @@
     "home": "Home",
     "play": "Play",
     "results": "Results",
+    "login": "Login",
+    "register": "Register",
     "formService": {
       "required": "You must enter a value",
       "minLength": "Minimum number of characters",

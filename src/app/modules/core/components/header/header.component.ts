@@ -1,12 +1,14 @@
 import { Component } from "@angular/core";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
-import { RouterLink, RouterLinkActive } from "@angular/router";
+import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 import { MatIconModule } from "@angular/material/icon";
 import { TranslateModule } from "@ngx-translate/core";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { MatMenuModule } from "@angular/material/menu";
 
 import { TranslateService } from "../../services/translate.service";
-import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { NgClass } from "@angular/common";
 
 @Component({
   selector: "app-header",
@@ -19,6 +21,8 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
     TranslateModule,
     MatButtonToggleModule,
     RouterLinkActive,
+    MatMenuModule,
+    NgClass,
   ],
   templateUrl: "./header.component.html",
   styleUrl: "./header.component.scss",
@@ -29,7 +33,10 @@ export class HeaderComponent {
   public isLightTheme = false;
   public hideSingleSelectionIndicator = true;
 
-  constructor(private translateService: TranslateService) {
+  constructor(
+    private translateService: TranslateService,
+    private router: Router
+  ) {
     this.languages = translateService.getLanguages();
     this.language = translateService.getLanguage();
   }
@@ -38,6 +45,10 @@ export class HeaderComponent {
     this.isLightTheme = !this.isLightTheme;
 
     document.body.setAttribute("data-theme", this.isLightTheme ? "light" : "dark");
+  }
+
+  isLinkActive(path: string) {
+    return this.router.url.includes(path);
   }
 
   onChangeLanguageClick(lang: string) {
