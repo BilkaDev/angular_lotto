@@ -4,6 +4,8 @@ import { RegisterComponent } from "./register.component";
 import { TranslateTestingModule } from "ngx-translate-testing";
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { provideMockStore } from "@ngrx/store/testing";
+import { AppState } from "../../../../store/app.reducer";
 
 const translateTestingModule = () =>
   TranslateTestingModule.withTranslations({
@@ -12,10 +14,19 @@ const translateTestingModule = () =>
 describe("RegisterComponent", () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
+  // let store: MockStore<AppState>;
 
+  const initialState: AppState = {
+    auth: {
+      loading: false,
+      user: null,
+      error: null,
+    },
+  };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RegisterComponent, translateTestingModule(), RouterModule.forRoot([]), BrowserAnimationsModule],
+      providers: [provideMockStore({ initialState })],
     }).compileComponents();
 
     fixture = TestBed.createComponent(RegisterComponent);

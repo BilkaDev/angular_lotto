@@ -20,6 +20,8 @@
       <button color="accent" mat-button
               routerLink="/auth/register">{{ "core.register" | translate }}
       </button>
+      <button color="accent" mat-button (click)="logout()">{{ "auth.logout" | translate }}
+      </button>
     </mat-menu>
     <mat-button-toggle-group
       class="btn-lang-group"

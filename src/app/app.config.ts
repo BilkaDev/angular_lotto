@@ -4,11 +4,14 @@ import { provideAnimationsAsync } from "@angular/platform-browser/animations/asy
 import { HttpClient, provideHttpClient, withInterceptors } from "@angular/common/http";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
-import { provideStore, StoreModule } from "@ngrx/store";
+import { provideStore } from "@ngrx/store";
+import { provideEffects } from "@ngrx/effects";
 
 import { routes } from "./app.routes";
 import { spinnerInterceptor } from "./modules/core/interceptors/spinner.interceptor";
-import { authReducer } from "./modules/core/store/auth.reducer";
+import { authReducer } from "./modules/auth/store/auth.reducer";
+import { AuthEffects } from "./modules/auth/store/auth.effects";
+import { errorHandlerInterceptor } from "./modules/core/interceptors/error-handler.interceptor";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./i8n/", ".json");
@@ -19,9 +22,10 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),
-    provideHttpClient(withInterceptors([spinnerInterceptor])),
+    provideHttpClient(withInterceptors([spinnerInterceptor, errorHandlerInterceptor])),
     importProvidersFrom(
-      StoreModule.forRoot({ auth: authReducer }),
+      // StoreModule.forRoot({ auth: authReducer }),
+      // EffectsModule.forRoot([AuthEffects]),
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
@@ -30,6 +34,7 @@ export const appConfig: ApplicationConfig = {
         },
       })
     ),
-    provideStore(),
+    provideStore([authReducer]),
+    provideEffects([AuthEffects]),
   ],
 };

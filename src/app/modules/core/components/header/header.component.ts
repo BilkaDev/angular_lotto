@@ -6,9 +6,12 @@ import { MatIconModule } from "@angular/material/icon";
 import { TranslateModule } from "@ngx-translate/core";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatMenuModule } from "@angular/material/menu";
+import { Store } from "@ngrx/store";
 
 import { TranslateService } from "../../services/translate.service";
 import { NgClass } from "@angular/common";
+import { AppState } from "../../../../store/app.reducer";
+import * as AuthAction from "../../../auth/store/auth.actions";
 
 @Component({
   selector: "app-header",
@@ -35,7 +38,8 @@ export class HeaderComponent {
 
   constructor(
     private translateService: TranslateService,
-    private router: Router
+    private router: Router,
+    private store: Store<AppState>
   ) {
     this.languages = translateService.getLanguages();
     this.language = translateService.getLanguage();
@@ -53,5 +57,9 @@ export class HeaderComponent {
 
   onChangeLanguageClick(lang: string) {
     this.translateService.changeLanguage(lang);
+  }
+
+  logout() {
+    this.store.dispatch(AuthAction.logout());
   }
 }

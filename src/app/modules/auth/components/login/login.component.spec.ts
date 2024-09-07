@@ -4,20 +4,34 @@ import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { LoginComponent } from "./login.component";
+import { provideMockStore } from "@ngrx/store/testing";
+import { AppState } from "../../../../store/app.reducer";
 
 const translateTestingModule = () =>
   TranslateTestingModule.withTranslations({
     en: {},
   });
+
 describe("LoginComponent", () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+  // let store: MockStore<AppState>;
+
+  const initialState: AppState = {
+    auth: {
+      loading: false,
+      user: null,
+      error: null,
+    },
+  };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [LoginComponent, translateTestingModule(), RouterModule.forRoot([]), BrowserAnimationsModule],
+      providers: [provideMockStore({ initialState })],
     }).compileComponents();
 
+    // store = TestBed.inject(Store) as MockStore<AppState>;
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

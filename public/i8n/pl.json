@@ -20,7 +20,10 @@
     "password": "Hasło",
     "repeatedPassword": "Powtórz hasło",
     "youDontHaveAccount": "Nie masz konta",
-    "email": "Email"
+    "email": "Email",
+    "accountCrated": "Utworzono konto",
+    "logout": "Wyloguj",
+    "logoutSuccess": "Wylogowano się"
   },
   "home": {
     "header": "Witamy w AngularLotto",

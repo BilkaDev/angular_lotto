@@ -24,7 +24,9 @@ export class AuthService {
 
   login(payload: LoginData) {
     return this.httpClient
-      .post<IUser>(`${this.apiUrl}${this.loginEp}`, payload)
+      .post<IUser>(`${this.apiUrl}${this.loginEp}`, payload, {
+        withCredentials: true,
+      })
       .pipe(catchError((err) => throwError(() => this.catchError(err))));
   }
 
@@ -36,7 +38,7 @@ export class AuthService {
 
   logout(): Observable<AuthResponse> {
     return this.httpClient
-      .get<AuthResponse>(`${this.apiUrl}${this.logoutEp}`)
+      .get<AuthResponse>(`${this.apiUrl}${this.logoutEp}`, { withCredentials: true })
       .pipe(catchError((err) => throwError(() => this.catchError(err))));
   }
 
