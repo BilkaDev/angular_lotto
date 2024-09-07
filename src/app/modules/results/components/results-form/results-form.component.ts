@@ -11,7 +11,7 @@ import { CardComponent } from "../../../shared/ui/card/card.component";
 import { ResultService } from "../../result.service";
 import { ResultMessageComponent } from "../result-message/result-message.component";
 import { Result } from "../../../core/models/result.model";
-import { ResultsForm } from "../../../core/models/froms.model";
+import { ResultsForm } from "../../../core/models/forms.model";
 import { FormsService } from "../../../core/services/forms.service";
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

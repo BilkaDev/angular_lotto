@@ -8,8 +8,19 @@
     "formService": {
       "required": "Musisz wpisać jakąś wartość",
       "minLength": "Minimalna ilość znaków",
-      "maxLength": "Maksymalan ilość znaków"
+      "maxLength": "Maksymalan ilość znaków",
+      "email": "Podaj poprawny adres email",
+      "repeatedPassword": "Hasła muszą być takie same"
     }
+  },
+  "auth": {
+    "signIn": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "login": "Login",
+    "password": "Hasło",
+    "repeatedPassword": "Powtórz hasło",
+    "youDontHaveAccount": "Nie masz konta",
+    "email": "Email"
   },
   "home": {
     "header": "Witamy w AngularLotto",

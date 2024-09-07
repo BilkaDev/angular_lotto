@@ -37,7 +37,11 @@ html {
   --btn-secondary-background-color: white;
   --btn-secondary-color-hover: black;
   --play-btn-submit: #595702;
-  --mdc-filled-text-field-container-color: #f1f1f1;
+  --label-font-color: #275954;
+  --mdc-filled-text-field-input-text-color: #00433d;  // input font color
+  --mdc-filled-text-field-label-text-color: #275954;  // required star color
+  --mat-form-field-error-text-color: #f83b3b;         // mat error color
+  --mdc-filled-text-field-container-color: #f1f1f1;   // label background-color
 }
 
 [data-theme="dark"] {
@@ -48,7 +52,6 @@ html {
   --btn-secondary-color: white;
   --btn-secondary-background-color: black;
   --play-btn-submit: #0CDDDD;
-  --mdc-filled-text-field-container-color: #3f4948;
 }
 
 .mat-secondary {
@@ -58,4 +61,16 @@ html {
 
 body[data-theme="light"] .mat-primary {
   color: #595702;
+
 }
+
+body[data-theme="light"] button.mat-primary {
+  color: #595702;
+  background: var(--mdc-filled-text-field-container-color);
+}
+
+mat-label {
+  //color:
+  color: var(--label-font-color)
+}
+
