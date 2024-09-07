@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
-import { catchError, EMPTY, map, of, switchMap } from "rxjs";
+import { catchError, map, of, switchMap } from "rxjs";
 
 import { AuthService } from "../../core/services/auth.service";
 import { SnackbarService } from "../../shared/ui/snackbar/snackbar.service";
@@ -35,7 +35,7 @@ export class AuthEffects {
         switchMap((action) => {
           return this.authService.register(action.registerData).pipe(
             map(() => {
-              this.router.navigate(["/auth/register"]);
+              this.router.navigate(["/auth/login"]);
               this.snackbar.openSnackBar(this.translate.instant("auth.accountCreated") + "!");
               return AuthActions.registerSuccess();
             }),
@@ -53,7 +53,7 @@ export class AuthEffects {
         switchMap((action) => {
           return this.authService.login(action.loginData).pipe(
             map((user) => {
-              this.router.navigate(["/"]);
+              this.router.navigate(["/play"]);
               return AuthActions.loginSuccess({ user: { ...user } });
             }),
             catchError((err) => of(AuthActions.loginFailed({ error: err.message })))
@@ -71,7 +71,7 @@ export class AuthEffects {
           return this.authService.logout().pipe(
             map(() => {
               this.router.navigate(["/"]);
-              this.snackbar.openSnackBar("auth.logoutSuccess");
+              this.snackbar.openSnackBar(this.translate.instant("auth.logoutSuccess"));
               return AuthActions.logoutSuccess();
             }),
             catchError(() => of(AuthActions.logoutFailed()))

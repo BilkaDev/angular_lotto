@@ -24,8 +24,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(withInterceptors([spinnerInterceptor, errorHandlerInterceptor])),
     importProvidersFrom(
-      // StoreModule.forRoot({ auth: authReducer }),
-      // EffectsModule.forRoot([AuthEffects]),
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
@@ -34,7 +32,7 @@ export const appConfig: ApplicationConfig = {
         },
       })
     ),
-    provideStore([authReducer]),
+    provideStore({ auth: authReducer }),
     provideEffects([AuthEffects]),
   ],
 };

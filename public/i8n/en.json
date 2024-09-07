@@ -21,7 +21,7 @@
     "repeatedPassword": "Repeated password",
     "youDontHaveAccount": "You don't have account",
     "email": "Email",
-    "accountCrated": "Account has been created",
+    "accountCreated": "Account has been created",
     "logout": "Logout",
     "logoutSuccess": "Logout out"
   },

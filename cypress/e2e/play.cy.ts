@@ -7,6 +7,21 @@ const ep = apiUrl + "/inputNumbers";
 describe("Play Page", () => {
   beforeEach(() => {
     cy.visit("");
+    cy.intercept("GET", apiUrl + "/auth/auto-login", {
+      statusCode: 200,
+      body: {
+        login: "test",
+        email: "test@wp.pl",
+      },
+    });
+    cy.intercept("GET", apiUrl + "/auth/logged-in", {
+      statusCode: 200,
+      body: {
+        message: "access permit",
+        code: "PERMIT",
+      },
+    });
+
     cy.get("nav button:contains('Play')").click();
   });
   it("should display ticket play the lottery", () => {
