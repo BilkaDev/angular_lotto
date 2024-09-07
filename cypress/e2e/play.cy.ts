@@ -2,7 +2,7 @@ import { environment } from "../../src/environments/environment";
 import { Ticket, TicketPostResponse } from "../../src/app/modules/core/models/ticket.model";
 
 const apiUrl = environment.apiUrl;
-const ep = apiUrl + "/api/v1/inputNumbers";
+const ep = apiUrl + "/inputNumbers";
 
 describe("Play Page", () => {
   beforeEach(() => {
@@ -40,6 +40,7 @@ describe("Play Page", () => {
       statusCode: 201,
       body,
     };
+    console.log(ep);
     cy.intercept("POST", ep, mockResponse).as("postData");
     cy.get('button:contains("Random")').click();
     cy.get('button:contains("Submit")').click();

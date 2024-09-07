@@ -13,7 +13,7 @@ import { ErrorParserService } from "../core/services/error-parser.service";
 export class TicketService {
   ticket = new BehaviorSubject<Ticket | null>(null);
   private apiUrl = environment.apiUrl;
-  private inputNumbersEP = "api/v1/inputNumbers";
+  private inputNumbersEP = "inputNumbers";
 
   constructor(
     private http: HttpClient,

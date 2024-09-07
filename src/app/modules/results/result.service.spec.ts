@@ -59,7 +59,7 @@ describe("ResultService", () => {
       expect(result.message).toBe(key);
     });
 
-    const req = httpTesting.expectOne(`${environment.apiUrl}/api/v1/results/hash123`);
+    const req = httpTesting.expectOne(`${environment.apiUrl}/results/hash123`);
     expect(req.request.method).toBe("GET");
     req.flush(mockResponse);
   });

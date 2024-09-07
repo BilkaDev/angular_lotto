@@ -12,7 +12,7 @@ import { ErrorParserService } from "../core/services/error-parser.service";
 })
 export class ResultService {
   private apiUrl = environment.apiUrl;
-  private resultsEP = "api/v1/results";
+  private resultsEP = "results";
 
   constructor(
     private http: HttpClient,

@@ -46,7 +46,7 @@ describe("TicketService", () => {
     service.inputNumbers(mockData).subscribe((ticket) => {
       expect(ticket.ticketId).toEqual("123456");
     });
-    const req = httpTesting.expectOne(`${environment.apiUrl}/api/v1/inputNumbers`);
+    const req = httpTesting.expectOne(`${environment.apiUrl}/inputNumbers`);
     expect(req.request.method).toBe("POST");
     req.flush(mockResponse);
   });
@@ -61,7 +61,7 @@ describe("TicketService", () => {
         expect(snackbarServiceSpy.openSnackBar).toHaveBeenCalled();
       },
     });
-    const req = httpTesting.expectOne(`${environment.apiUrl}/api/v1/inputNumbers`);
+    const req = httpTesting.expectOne(`${environment.apiUrl}/inputNumbers`);
     expect(req.request.method).toBe("POST");
     req.flush("Failed!", { status: 500, statusText: "Internal Server Error" });
   });
