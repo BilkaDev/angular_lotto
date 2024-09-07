@@ -7,7 +7,6 @@ import { TranslateTestingModule } from "ngx-translate-testing";
 import { AuthService } from "./auth.service";
 import { AuthResponse, IUser } from "../models/auth.model";
 import { SnackbarService } from "../../shared/ui/snackbar/snackbar.service";
-import { environment } from "../../../../environments/environment";
 
 const translateTestingModule = () => TranslateTestingModule.withTranslations({});
 
@@ -44,7 +43,7 @@ describe("AuthService", () => {
       expect(result.email).toEqual("test@wp.pl");
     });
 
-    const req = httpTesting.expectOne(`${environment.apiUrl}${service["loginEp"]}`);
+    const req = httpTesting.expectOne(`${service["apiUrl"]}${service["loginEp"]}`);
     expect(req.request.method).toBe("POST");
     req.flush(mockResponse);
   });
@@ -74,7 +73,7 @@ describe("AuthService", () => {
       expect(result.message).toEqual("testMessage");
     });
 
-    const req = httpTesting.expectOne(`${environment.apiUrl}${service["logoutEp"]}`);
+    const req = httpTesting.expectOne(`${service["apiUrl"]}${service["logoutEp"]}`);
     expect(req.request.method).toBe("GET");
     req.flush(mockResponse);
   });
@@ -104,7 +103,7 @@ describe("AuthService", () => {
       expect(result.message).toEqual("SUCCESS");
     });
 
-    const req = httpTesting.expectOne(`${environment.apiUrl}${service["registerEp"]}`);
+    const req = httpTesting.expectOne(`${service["apiUrl"]}${service["registerEp"]}`);
     expect(req.request.method).toBe("POST");
     req.flush(mockResponse);
   });
