@@ -3,7 +3,7 @@ import { inject } from "@angular/core";
 import { AuthService } from "../services/auth.service";
 import { map, take } from "rxjs";
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const authGuard: CanActivateFn = () => {
   const router = inject(Router);
   const authService = inject(AuthService);
   return authService.loggedIn().pipe(
