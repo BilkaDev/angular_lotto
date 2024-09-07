@@ -40,7 +40,6 @@ describe("Play Page", () => {
       statusCode: 201,
       body,
     };
-    console.log(ep);
     cy.intercept("POST", ep, mockResponse).as("postData");
     cy.get('button:contains("Random")').click();
     cy.get('button:contains("Submit")').click();
