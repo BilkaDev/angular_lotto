@@ -17,7 +17,7 @@ const initialState: AuthState = {
 
 const _authReducer = createReducer(
   initialState,
-  on(AuthActions.login, (state) => ({
+  on(AuthActions.register, AuthActions.login, (state) => ({
     ...state,
     loading: true,
   })),
@@ -27,47 +27,28 @@ const _authReducer = createReducer(
     user: new User(action.user.login, action.user.email),
     error: null,
   })),
-  on(AuthActions.loginFailed, (state, action) => ({
+  on(AuthActions.loginFailed, AuthActions.registerFailed, (state, action) => ({
     ...state,
     loading: false,
     user: null,
     error: action.error,
   })),
-  on(AuthActions.autoLogin, (state) => ({
+  on(AuthActions.logoutFailed, AuthActions.autoLogin, AuthActions.autoLoginFailed, AuthActions.logout, (state) => ({
     ...state,
   })),
   on(AuthActions.autoLoginSuccess, (state, action) => ({
     ...state,
     user: new User(action.user.login, action.user.email),
   })),
-  on(AuthActions.autoLoginFailed, (state) => ({
-    ...state,
-  })),
-  on(AuthActions.logout, (state) => ({
-    ...state,
-  })),
   on(AuthActions.logoutSuccess, (state) => ({
     ...state,
     user: null,
     error: null,
   })),
-  on(AuthActions.logoutFailed, (state) => ({
-    ...state,
-  })),
-  on(AuthActions.register, (state) => ({
-    ...state,
-    loading: true,
-  })),
   on(AuthActions.registerSuccess, (state) => ({
     ...state,
     loading: false,
     error: null,
-  })),
-  on(AuthActions.registerFailed, (state, action) => ({
-    ...state,
-    loading: false,
-    user: null,
-    error: action.error,
   })),
   on(AuthActions.clearError, (state) => ({
     ...state,
