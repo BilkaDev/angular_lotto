@@ -2,6 +2,10 @@ import { createAction, props } from "@ngrx/store";
 
 import { IUser, LoginData, RegisterData } from "../../core/models/auth.model";
 
+const AUTO_LOGIN_TYPE = "[Auth] Auto Login";
+const AUTO_LOGIN_SUCCESS_TYPE = "[Auth] Auto Login Success";
+const AUTO_LOGIN_FAILED_TYPE = "[Auth] Auto Login Failed";
+
 const LOGIN_TYPE = "[Auth] Login";
 const LOGIN_SUCCESS_TYPE = "[Auth] Login Success";
 const LOGIN_FAILED_TYPE = "[Auth] Login Failed";
@@ -15,6 +19,11 @@ const LOGOUT_SUCCESS_TYPE = "[Auth] Logout Success";
 const LOGOUT_FAILED_TYPE = "[Auth] Logout Failed";
 
 const CLEAR_ERROR_TYPE = "[Auth] Clear Error";
+
+export const autoLogin = createAction(AUTO_LOGIN_TYPE);
+
+export const autoLoginSuccess = createAction(AUTO_LOGIN_SUCCESS_TYPE, props<{ user: IUser }>());
+export const autoLoginFailed = createAction(AUTO_LOGIN_FAILED_TYPE);
 
 export const login = createAction(LOGIN_TYPE, props<{ loginData: LoginData }>());
 

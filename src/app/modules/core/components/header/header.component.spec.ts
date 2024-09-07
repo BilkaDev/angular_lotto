@@ -4,6 +4,8 @@ import { HeaderComponent } from "./header.component";
 import { RouterModule } from "@angular/router";
 import { By } from "@angular/platform-browser";
 import { TranslateTestingModule } from "ngx-translate-testing";
+import { provideMockStore } from "@ngrx/store/testing";
+import { AppState } from "../../../../store/app.reducer";
 
 const translateTestingModule = () =>
   TranslateTestingModule.withTranslations({
@@ -12,10 +14,17 @@ const translateTestingModule = () =>
 describe("HeaderComponent", () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-
+  const initialState: AppState = {
+    auth: {
+      loading: false,
+      user: null,
+      error: null,
+    },
+  };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HeaderComponent, RouterModule.forRoot([]), translateTestingModule()],
+      providers: [provideMockStore({ initialState })],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderComponent);

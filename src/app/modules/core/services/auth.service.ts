@@ -16,6 +16,7 @@ export class AuthService {
   private registerEp = "/register";
   private logoutEp = "/logout";
   private loggedInEp = "/logged-in";
+  private autoLoginEp = "/auto-login";
 
   constructor(
     private httpClient: HttpClient,
@@ -47,6 +48,10 @@ export class AuthService {
     return this.httpClient
       .get<AuthResponse>(`${this.apiUrl}${this.loggedInEp}`, { withCredentials: true })
       .pipe(catchError((err) => throwError(() => this.catchError(err))));
+  }
+
+  autoLogin(): Observable<IUser> {
+    return this.httpClient.get<IUser>(`${this.apiUrl}${this.autoLoginEp}`, { withCredentials: true }).pipe();
   }
 
   private catchError(err: HttpErrorResponse) {

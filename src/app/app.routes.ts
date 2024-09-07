@@ -1,6 +1,5 @@
 import { Routes } from "@angular/router";
-
-import { unauthGuard } from "./modules/core/guards/unauth.guard";
+import { authGuard } from "./modules/core/guards/auth.guard";
 
 export const routes: Routes = [
   {
@@ -10,7 +9,7 @@ export const routes: Routes = [
   {
     path: "play",
     loadComponent: () => import("./modules/play/play.component").then((c) => c.PlayComponent),
-    canActivate: [unauthGuard],
+    canActivate: [authGuard],
   },
   {
     path: "results",

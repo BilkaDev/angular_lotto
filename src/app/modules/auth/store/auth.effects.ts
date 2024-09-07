@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
-import { catchError, map, of, switchMap } from "rxjs";
+import { catchError, EMPTY, map, of, switchMap } from "rxjs";
 
 import { AuthService } from "../../core/services/auth.service";
 import { SnackbarService } from "../../shared/ui/snackbar/snackbar.service";
@@ -11,6 +11,7 @@ import * as AuthActions from "./auth.actions";
 @Injectable()
 export class AuthEffects {
   login$;
+  autoLogin$;
   register$;
   logout$;
 
@@ -24,6 +25,7 @@ export class AuthEffects {
     this.login$ = this.createLogin();
     this.register$ = this.createRegister();
     this.logout$ = this.createLogout();
+    this.autoLogin$ = this.createAutoLogin();
   }
 
   private createRegister() {
@@ -75,6 +77,22 @@ export class AuthEffects {
             catchError(() => of(AuthActions.logoutFailed()))
           );
         })
+      )
+    );
+  }
+
+  private createAutoLogin() {
+    return createEffect(() =>
+      this.actions$.pipe(
+        ofType(AuthActions.autoLogin),
+        switchMap(() => {
+          return this.authService.autoLogin().pipe(
+            map((user) => {
+              return AuthActions.autoLoginSuccess({ user: { ...user } });
+            })
+          );
+        }),
+        catchError(() => of(AuthActions.autoLoginFailed()))
       )
     );
   }

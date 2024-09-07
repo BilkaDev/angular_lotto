@@ -9,9 +9,12 @@ import { MatMenuModule } from "@angular/material/menu";
 import { Store } from "@ngrx/store";
 
 import { TranslateService } from "../../services/translate.service";
-import { NgClass } from "@angular/common";
+import { AsyncPipe, NgClass, NgIf } from "@angular/common";
 import { AppState } from "../../../../store/app.reducer";
 import * as AuthAction from "../../../auth/store/auth.actions";
+import { Observable, of } from "rxjs";
+import { User } from "../../models/auth.model";
+import { selectAuthUser } from "../../../auth/store/auth.selectors";
 
 @Component({
   selector: "app-header",
@@ -26,6 +29,8 @@ import * as AuthAction from "../../../auth/store/auth.actions";
     RouterLinkActive,
     MatMenuModule,
     NgClass,
+    NgIf,
+    AsyncPipe,
   ],
   templateUrl: "./header.component.html",
   styleUrl: "./header.component.scss",
@@ -35,6 +40,7 @@ export class HeaderComponent {
   public language: string;
   public isLightTheme = false;
   public hideSingleSelectionIndicator = true;
+  public user$: Observable<User | null> = of(null);
 
   constructor(
     private translateService: TranslateService,
@@ -43,6 +49,7 @@ export class HeaderComponent {
   ) {
     this.languages = translateService.getLanguages();
     this.language = translateService.getLanguage();
+    this.user$ = this.store.select(selectAuthUser);
   }
 
   onThemeSwitchChange() {
