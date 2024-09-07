@@ -11,7 +11,7 @@ import { ErrorParserService } from "./error-parser.service";
   providedIn: "root",
 })
 export class AuthService {
-  private apiUrl = environment.apiUrl;
+  private apiUrl = environment.apiUrl + "/auth";
   private loginEp = "/login";
   private registerEp = "/register";
   private logoutEp = "/logout";
