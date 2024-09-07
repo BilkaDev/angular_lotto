@@ -5,7 +5,6 @@ import { BehaviorSubject, catchError, map, Observable, tap, throwError } from "r
 import { environment } from "../../../environments/environment";
 import { SnackbarService } from "../shared/ui/snackbar/snackbar.service";
 import { Ticket, TicketData, TicketPostResponse } from "../core/models/ticket.model";
-import { ErrorParserService } from "../core/services/error-parser.service";
 
 @Injectable({
   providedIn: "root",
@@ -17,7 +16,6 @@ export class TicketService {
 
   constructor(
     private http: HttpClient,
-    private errorParser: ErrorParserService,
     private snackbar: SnackbarService
   ) {}
 
@@ -29,8 +27,7 @@ export class TicketService {
       }),
       tap((ticket) => this.ticket.next(ticket)),
       catchError((err) => {
-        const errorMessage = this.errorParser.parseErrorFromStatus(err.status);
-        this.snackbar.openSnackBar(errorMessage, true);
+        this.snackbar.openSnackBar(err.message, true);
         return throwError(err);
       })
     );

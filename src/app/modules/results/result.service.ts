@@ -5,7 +5,6 @@ import { catchError, map, Observable, throwError } from "rxjs";
 import { environment } from "../../../environments/environment";
 import { messageResponse, Result, ResultResponse } from "../core/models/result.model";
 import { SnackbarService } from "../shared/ui/snackbar/snackbar.service";
-import { ErrorParserService } from "../core/services/error-parser.service";
 
 @Injectable({
   providedIn: "root",
@@ -16,15 +15,13 @@ export class ResultService {
 
   constructor(
     private http: HttpClient,
-    private snackbarService: SnackbarService,
-    private errorParser: ErrorParserService
+    private snackbarService: SnackbarService
   ) {}
 
   getResult(id: string): Observable<Result> {
     return this.http.get<ResultResponse>(`${this.apiUrl}/${this.resultsEP}/${id}`).pipe(
       catchError((err) => {
-        const message = this.errorParser.parseError(err);
-        this.snackbarService.openSnackBar(message, true);
+        this.snackbarService.openSnackBar(err.message, true);
         return throwError(err);
       }),
       map((v) => {
