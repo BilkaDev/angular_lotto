@@ -58,7 +58,14 @@
     "503-desc": "Serwer jest obecnie niedostępny (przeciążony lub wyłączony). Proszę spróbować ponownie później.",
     "unknown-error": "Coś Poszło Nie Tak",
     "unknown-error-desc": "Wystąpił nieoczekiwany błąd. Proszę spróbować ponownie.",
-    "resultNotFound": "Podany kupon nie istnieje"
+    "resultNotFound": "Podany kupon nie istnieje",
+    "denied": "Odmowa dostępu",
+    "userNotFound": "Określony użytkownik o podanej nazwie nie istnieje",
+    "invalidData": "Określone dane są nieprawidłowe",
+    "tokenExpired": "Wskazany token jest pusty lub nieprawidłowy",
+    "loginNotExist": "Użytkownik o podanej nazwie nie istnieje",
+    "emailExist": "Użytkownik o podanym adresie e-mail już istnieje",
+    "incorrectCredentials": "Niepoprawne dane logowania"
   },
   "play": {
     "ticketForm": {

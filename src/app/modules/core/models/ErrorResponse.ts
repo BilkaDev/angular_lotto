@@ -1,5 +1,12 @@
 export const errorCodeMap: Record<string, string> = {
   TICKET_NOT_FOUND: "error.resultNotFound",
+  DENY: "denied",
+  A1: "error.userNotFound",
+  A2: "error.invalidData",
+  A3: "error.tokenExpired",
+  A4: "error.loginNotExist",
+  A5: "error.emailExist",
+  A6: "error.incorrectCredentials",
 };
 
 export class ErrorResponse {

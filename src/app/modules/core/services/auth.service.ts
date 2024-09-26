@@ -1,11 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { Observable, throwError, catchError } from "rxjs";
+import { catchError, Observable, throwError } from "rxjs";
 
 import { environment } from "../../../../environments/environment";
 import { AuthResponse, IUser, LoginData, RegisterData } from "../models/auth.model";
 import { SnackbarService } from "../../shared/ui/snackbar/snackbar.service";
-import { ErrorParserService } from "./error-parser.service";
 
 @Injectable({
   providedIn: "root",
@@ -20,8 +19,7 @@ export class AuthService {
 
   constructor(
     private httpClient: HttpClient,
-    private snackbar: SnackbarService,
-    private errorParser: ErrorParserService
+    private snackbar: SnackbarService
   ) {}
 
   login(payload: LoginData) {
@@ -55,7 +53,7 @@ export class AuthService {
   }
 
   private catchError(err: HttpErrorResponse) {
-    const errorMessage = this.errorParser.parseError(err.status);
+    const errorMessage = err.message;
     this.snackbar.openSnackBar(errorMessage, true);
     return err;
   }
