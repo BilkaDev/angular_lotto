@@ -32,6 +32,8 @@
     "have-fun": "Losuj, wygrywaj i baw się dobrze!",
     "join-us": "Dołącz do naszej społeczności graczy, śledź wyniki i bądź na bieżąco z najnowszymi nagrodami. Nie przegap swojej szansy na wygraną - zagraj już dziś i miej szansę na wielką wygraną!",
     "list": {
+      "login": "Zaloguj się",
+      "login-desc": "Zaloguj się na swoje konto by zagrać!",
       "choose": "Wybierz swoje liczby",
       "choose-desc": "Wpisz 6 cyfr od 1 do 99.",
       "wait": "Czekaj na losowanie",

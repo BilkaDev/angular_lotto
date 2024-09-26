@@ -32,6 +32,8 @@
     "have-fun": "Draw, win and have fun!",
     "join-us": "Join our community of players, follow the results and stay up to date with the latest rewards. Don't miss your chance to win - play today and have a chance to win big!",
     "list": {
+      "login": "Log in",
+      "login-desc": "Log in to your account!",
       "choose": "Choose your numbers",
       "choose-desc": "Type 6 digits from 1 to 99.",
       "wait": "Wait for the drawing",
