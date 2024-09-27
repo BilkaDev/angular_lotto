@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from "@angular/core";
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection, isDevMode } from "@angular/core";
 import { provideRouter } from "@angular/router";
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
 import { HttpClient, provideHttpClient, withInterceptors } from "@angular/common/http";
@@ -6,6 +6,7 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { provideStore } from "@ngrx/store";
 import { provideEffects } from "@ngrx/effects";
+import { provideServiceWorker } from "@angular/service-worker";
 
 import { routes } from "./app.routes";
 import { spinnerInterceptor } from "./modules/core/interceptors/spinner.interceptor";
@@ -34,5 +35,9 @@ export const appConfig: ApplicationConfig = {
     ),
     provideStore({ auth: authReducer }),
     provideEffects([AuthEffects]),
+    provideServiceWorker("ngsw-worker.js", {
+      enabled: !isDevMode(),
+      registrationStrategy: "registerWhenStable:30000",
+    }),
   ],
 };
