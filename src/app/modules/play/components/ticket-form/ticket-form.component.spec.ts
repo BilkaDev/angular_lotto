@@ -60,8 +60,6 @@ describe("TicketFormComponent", () => {
     fixture.detectChanges();
     submitButton.click();
 
-    console.log(component.ticketData);
-
     expect(ticketServiceSpy.inputNumbers).toHaveBeenCalled();
   });
 

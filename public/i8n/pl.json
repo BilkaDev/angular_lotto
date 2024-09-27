@@ -1,13 +1,29 @@
 {
   "core": {
-    "home": "Strona główna",
+    "home": "Główna",
     "play": "Graj",
     "results": "Wyniki",
+    "login": "Logowanie",
+    "register": "Rejestracja",
     "formService": {
       "required": "Musisz wpisać jakąś wartość",
       "minLength": "Minimalna ilość znaków",
-      "maxLength": "Maksymalan ilość znaków"
+      "maxLength": "Maksymalan ilość znaków",
+      "email": "Podaj poprawny adres email",
+      "repeatedPassword": "Hasła muszą być takie same"
     }
+  },
+  "auth": {
+    "signIn": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "login": "Login",
+    "password": "Hasło",
+    "repeatedPassword": "Powtórz hasło",
+    "youDontHaveAccount": "Nie masz konta",
+    "email": "Email",
+    "accountCreated": "Utworzono konto",
+    "logout": "Wyloguj",
+    "logoutSuccess": "Wylogowano się"
   },
   "home": {
     "header": "Witamy w AngularLotto",
@@ -16,6 +32,8 @@
     "have-fun": "Losuj, wygrywaj i baw się dobrze!",
     "join-us": "Dołącz do naszej społeczności graczy, śledź wyniki i bądź na bieżąco z najnowszymi nagrodami. Nie przegap swojej szansy na wygraną - zagraj już dziś i miej szansę na wielką wygraną!",
     "list": {
+      "login": "Zaloguj się",
+      "login-desc": "Zaloguj się na swoje konto by zagrać!",
       "choose": "Wybierz swoje liczby",
       "choose-desc": "Wpisz 6 cyfr od 1 do 99.",
       "wait": "Czekaj na losowanie",
@@ -42,7 +60,14 @@
     "503-desc": "Serwer jest obecnie niedostępny (przeciążony lub wyłączony). Proszę spróbować ponownie później.",
     "unknown-error": "Coś Poszło Nie Tak",
     "unknown-error-desc": "Wystąpił nieoczekiwany błąd. Proszę spróbować ponownie.",
-    "resultNotFound": "Podany kupon nie istnieje"
+    "resultNotFound": "Podany kupon nie istnieje",
+    "denied": "Odmowa dostępu",
+    "userNotFound": "Określony użytkownik o podanej nazwie nie istnieje",
+    "invalidData": "Określone dane są nieprawidłowe",
+    "tokenExpired": "Wskazany token jest pusty lub nieprawidłowy",
+    "loginNotExist": "Użytkownik o podanej nazwie nie istnieje",
+    "emailExist": "Użytkownik o podanym adresie e-mail już istnieje",
+    "incorrectCredentials": "Niepoprawne dane logowania"
   },
   "play": {
     "ticketForm": {

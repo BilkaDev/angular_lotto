@@ -1,0 +1,47 @@
+<app-card>
+  <form card-content [formGroup]='registerForm' (ngSubmit)='onRegister()'>
+    <div class='form-input'>
+      <mat-form-field appearance='fill'>
+        <mat-label>{{ "auth.login" | translate }}</mat-label>
+        <input matInput [formControl]='controls.login'>
+        <mat-error *ngIf='controls.login.invalid'>{{ getErrorMessage(controls.login) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class='form-input'>
+      <mat-form-field appearance='fill'>
+        <mat-label>{{ "auth.email" | translate }}</mat-label>
+        <input matInput [formControl]='controls.email'>
+        <mat-error *ngIf='controls.email.invalid'>{{ getErrorMessage(controls.email) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class='form-input'>
+      <mat-form-field appearance='fill'>
+        <mat-label>{{ "auth.password" | translate }}</mat-label>
+        <input [type]="hide() ? 'password' : 'text'" matInput [formControl]='controls.password'>
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="showPassword($event)"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide()"
+        >
+          <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf='controls.password.invalid'>{{ getErrorMessage(controls.password) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class='form-input'>
+      <mat-form-field appearance='fill'>
+        <mat-label>{{ "auth.repeatedPassword" | translate }}</mat-label>
+        <input type='password' matInput [formControl]='controls.repeatedPassword'>
+        <mat-error *ngIf='controls.repeatedPassword.invalid'>{{ getErrorMessage(controls.repeatedPassword) }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class='actions'>
+      <button type="submit" mat-raised-button color='primary' [disabled]='registerForm.invalid'>{{ "auth.signUp" | translate }}
+      </button>
+    </div>
+  </form>
+</app-card>

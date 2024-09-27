@@ -2,9 +2,10 @@
 
 @import "themes";
 
-:host{
+:host {
   position: relative;
 }
+
 .spacer {
 
   flex: 1 1 auto;
@@ -22,11 +23,21 @@
   position: absolute;
   top: 120%;
   right: 2%;
+
   .btn-lang {
     color: var(--main-font-color);
   }
 }
 
-.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base.active-link {
+.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base.active-link, .active-link {
   color: mat.get-theme-color($theme, primary, 80);
+}
+
+.person-auth-icon {
+  cursor: pointer;
+  margin-left: 5px;
+
+  &:hover {
+    color: mat.get-theme-color($theme, primary, 80);
+  }
 }

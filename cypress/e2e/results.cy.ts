@@ -1,7 +1,7 @@
 import { environment } from "../../src/environments/environment";
 
 const apiUrl = environment.apiUrl;
-const ep = "/api/v1/results/";
+const ep = "/results/";
 
 describe("Play Page", () => {
   beforeEach(() => {
@@ -30,7 +30,7 @@ describe("Play Page", () => {
 
     // should display error snackbar if not found ticket.
     cy.fixture("results").then((json) => {
-      cy.intercept("GET", "/api/v1/results/**", (req) => {
+      cy.intercept("GET", apiUrl + ep + "**", (req) => {
         const id = req.url.slice(req.url.lastIndexOf("/") + 1);
         const resultId = json.findIndex((item) => item.result.hash == id);
         if (resultId != -1) {

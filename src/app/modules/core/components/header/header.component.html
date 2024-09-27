@@ -9,8 +9,25 @@
     <button [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" mat-button
             routerLink="/">{{ "core.home" | translate }}
     </button>
-    <button routerLinkActive="active-link" mat-button routerLink="/play">{{ "core.play" | translate }}</button>
+    <button *ngIf="user$ | async" routerLinkActive="active-link" mat-button
+            routerLink="/play">{{ "core.play" | translate }}
+    </button>
     <button routerLinkActive="active-link" mat-button routerLink="/results">{{ "core.results" | translate }}</button>
+    <mat-icon [class.active-link]="isLinkActive('/auth')" class="person-auth-icon" [matMenuTriggerFor]="menu">person
+    </mat-icon>
+    <mat-menu #menu="matMenu">
+      <ng-container *ngIf="user$ | async; else notUser">
+        <button color="accent" mat-button (click)="logout()">{{ "auth.logout" | translate }}</button>
+      </ng-container>
+      <ng-template #notUser>
+        <button color="accent" mat-button
+                routerLink="/auth/login">{{ "core.login" | translate }}
+        </button>
+        <button color="accent" mat-button
+                routerLink="/auth/register">{{ "core.register" | translate }}
+        </button>
+      </ng-template>
+    </mat-menu>
     <mat-button-toggle-group
       class="btn-lang-group"
       name="language"
