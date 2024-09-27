@@ -20,17 +20,21 @@ export class TicketService {
   ) {}
 
   inputNumbers(ticketDto: TicketData): Observable<Ticket> {
-    return this.http.post<TicketPostResponse>(`${this.apiUrl}/${this.inputNumbersEP}`, ticketDto).pipe(
-      map((value) => {
-        const ticketDto = value.ticket;
-        return new Ticket(ticketDto.drawDate, ticketDto.ticketId, ticketDto.numbers);
-      }),
-      tap((ticket) => this.ticket.next(ticket)),
-      catchError((err) => {
-        this.snackbar.openSnackBar(err.message, true);
-        return throwError(err);
+    return this.http
+      .post<TicketPostResponse>(`${this.apiUrl}/${this.inputNumbersEP}`, ticketDto, {
+        withCredentials: true,
       })
-    );
+      .pipe(
+        map((value) => {
+          const ticketDto = value.ticket;
+          return new Ticket(ticketDto.drawDate, ticketDto.ticketId, ticketDto.numbers);
+        }),
+        tap((ticket) => this.ticket.next(ticket)),
+        catchError((err) => {
+          this.snackbar.openSnackBar(err.message, true);
+          return throwError(err);
+        })
+      );
   }
 
   clearTicket() {
