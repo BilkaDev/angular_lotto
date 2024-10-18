@@ -11,6 +11,13 @@
   flex: 1 1 auto;
 }
 
+a {
+  all: unset;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .first-letter {
   font-weight: bold;
 }

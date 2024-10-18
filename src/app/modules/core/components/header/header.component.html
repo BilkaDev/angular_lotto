@@ -1,6 +1,8 @@
 <nav>
   <mat-toolbar>
-    <span class="first-letter">A</span><span>Lotto</span>
+    <a [routerLink]="['/']">
+      <span class="first-letter">A</span><span>Lotto</span>
+    </a>
     <button class="mode-btn" mat-icon-button aria-label="dark mode icon"
             (click)="onThemeSwitchChange()">
       <mat-icon>nightlight</mat-icon>
