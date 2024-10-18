@@ -23,7 +23,8 @@
     "email": "Email",
     "accountCreated": "Utworzono konto",
     "logout": "Wyloguj",
-    "logoutSuccess": "Wylogowano się"
+    "logoutSuccess": "Wylogowano się",
+    "demo": "Przetestuj demo"
   },
   "home": {
     "header": "Witamy w AngularLotto",

@@ -15,7 +15,10 @@
       </mat-form-field>
     </div>
     <div class='actions'>
-      <button mat-raised-button color='primary' [disabled]='loginForm.invalid'>{{ "auth.signIn" | translate }}
+      <button type="submit" mat-raised-button color='primary'
+              [disabled]='loginForm.invalid'>{{ "auth.signIn" | translate }}
+      </button>
+      <button (click)="demoLogin()" type="button" mat-raised-button color='primary'>{{ "auth.demo" | translate }}
       </button>
     </div>
     <p class='text-center'>{{ "auth.youDontHaveAccount" | translate }}? <a

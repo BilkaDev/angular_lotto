@@ -48,6 +48,17 @@ export class LoginComponent implements OnDestroy {
     this.store.dispatch(AuthAction.login({ loginData: this.loginForm.getRawValue() }));
   }
 
+  demoLogin() {
+    this.store.dispatch(
+      AuthAction.login({
+        loginData: {
+          login: "test",
+          password: "test12345",
+        },
+      })
+    );
+  }
+
   getErrorMessage(control: FormControl) {
     return this.formsService.getErrorMessage(control);
   }
