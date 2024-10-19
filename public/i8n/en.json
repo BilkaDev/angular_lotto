@@ -40,7 +40,7 @@
       "wait": "Wait for the drawing",
       "wait-desc": "Every Saturday at 12:00 we draw 6 numbers.",
       "check": "Check the score",
-      "check-dsc": "If you hit at least 3 numbers, you are the winner!"
+      "check-desc": "If you hit at least 3 numbers, you are the winner!"
     }
   },
   "error": {
