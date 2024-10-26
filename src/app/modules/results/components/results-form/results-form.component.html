@@ -1,0 +1,17 @@
+<div card-content class="content">
+  <form [formGroup]="resultsForm" class="form" (ngSubmit)="onSubmit()">
+    <mat-form-field color="primary" class="example-full-width">
+      <mat-label>{{ "result.label" | translate }}</mat-label>
+      <input type="text" matInput [formControl]="controls.ticketIdControl" [errorStateMatcher]="matcher"
+             placeholder="">
+      <mat-error *ngIf="controls.ticketIdControl.invalid">{{ getErrorMessage(controls.ticketIdControl) }}</mat-error>
+    </mat-form-field>
+    <div class="actions">
+      <button [disabled]="controls.ticketIdControl.invalid" color="primary" type="submit"
+              mat-button>{{ "result.submit"| translate }}
+      </button>
+      <app-result-message *ngIf="result" [result]="result"></app-result-message>
+    </div>
+  </form>
+
+</div>

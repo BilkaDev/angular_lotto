@@ -1,0 +1,46 @@
+<nav>
+  <mat-toolbar>
+    <a [routerLink]="['/']">
+      <span class="first-letter">A</span><span>Lotto</span>
+    </a>
+    <button class="mode-btn" mat-icon-button aria-label="dark mode icon"
+            (click)="onThemeSwitchChange()">
+      <mat-icon>nightlight</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <button [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" mat-button
+            routerLink="/">{{ "core.home" | translate }}
+    </button>
+    <button *ngIf="user$ | async" routerLinkActive="active-link" mat-button
+            routerLink="/play">{{ "core.play" | translate }}
+    </button>
+    <button routerLinkActive="active-link" mat-button routerLink="/results">{{ "core.results" | translate }}</button>
+    <mat-icon [class.active-link]="isLinkActive('/auth')" class="person-auth-icon" [matMenuTriggerFor]="menu">person
+    </mat-icon>
+    <mat-menu #menu="matMenu">
+      <ng-container *ngIf="user$ | async; else notUser">
+        <button color="accent" mat-button (click)="logout()">{{ "auth.logout" | translate }}</button>
+      </ng-container>
+      <ng-template #notUser>
+        <button color="accent" mat-button
+                routerLink="/auth/login">{{ "core.login" | translate }}
+        </button>
+        <button color="accent" mat-button
+                routerLink="/auth/register">{{ "core.register" | translate }}
+        </button>
+      </ng-template>
+    </mat-menu>
+    <mat-button-toggle-group
+      class="btn-lang-group"
+      name="language"
+      aria-label="Language"
+      [value]="language"
+      [hideSingleSelectionIndicator]="{hideSingleSelectionIndicator}"
+    >
+      @for (l of languages; track l) {
+        <mat-button-toggle class="btn-lang" (click)="onChangeLanguageClick(l)" value="{{l}}">{{ l.toUpperCase() }}
+        </mat-button-toggle>
+      }
+    </mat-button-toggle-group>
+  </mat-toolbar>
+</nav>

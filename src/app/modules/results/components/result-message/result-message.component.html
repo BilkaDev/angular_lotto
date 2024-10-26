@@ -1,0 +1,17 @@
+<div class="message">
+  {{ "result." + result.message | translate }}
+</div>
+<div class="ticket">
+  <div class="row">
+    <b>{{ "result.numbers" | translate }}:</b> <span>{{ result.numbers }}</span>
+  </div>
+  <div *ngIf="result.wonNumbers" class="row">
+    <b>{{ "result.wonNumbers" | translate }}:</b> <span>{{ result.wonNumbers }}</span>
+  </div>
+  <div *ngIf="result.hitNumbers" class="row">
+    <b>{{ "result.hitNumbers" | translate }}:</b> <span>{{ result.hitNumbers }}</span>
+  </div>
+  <div class="row">
+    <b>{{ "result.drawDate" | translate }}:</b> <span>{{ result.drawDate | date }}</span>
+  </div>
+</div>

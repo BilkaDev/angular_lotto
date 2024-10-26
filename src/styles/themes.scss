@@ -1,0 +1,76 @@
+@use '@angular/material' as mat;
+@use '@angular/material/core/theming/definition';
+@use '@angular/material/core/theming/color-api-backwards-compatibility';
+@use '@angular/material/core/theming/palettes';
+@use '@angular/material/core/theming/all-theme';
+@use '@angular/material/core/typography/typography';
+
+@include mat.core();
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$cyan-palette,
+    tertiary: mat.$orange-palette,
+  ),
+  typography: (
+    bold-weight: 800
+  ),
+  density: (
+    scale: 0
+  )
+));
+
+html {
+  @include mat.all-component-themes($theme);
+}
+
+@include color-api-backwards-compatibility.color-variants-backwards-compatibility($theme);
+@include typography.typography-hierarchy($theme);
+
+[data-theme="light"] {
+  --main-background-color: #f8f8f8;
+  --main-font-color: black;
+  --card-background-color: white;
+  --card-font-color: black;
+  --btn-secondary-color: black;
+  --btn-secondary-background-color: white;
+  --btn-secondary-color-hover: black;
+  --play-btn-submit: #595702;
+  --label-font-color: #275954;
+  --mdc-filled-text-field-input-text-color: #00433d;  // input font color
+  --mdc-filled-text-field-label-text-color: #275954;  // required star color
+  --mat-form-field-error-text-color: #f83b3b;         // mat error color
+  --mdc-filled-text-field-container-color: #f1f1f1;   // label background-color
+}
+
+[data-theme="dark"] {
+  --main-background-color: #0c0c0c;
+  --main-font-color: white;
+  --card-background-color: #1c1c1c;
+  --card-font-color: white;
+  --btn-secondary-color: white;
+  --btn-secondary-background-color: black;
+  --play-btn-submit: #0CDDDD;
+}
+
+.mat-secondary {
+  color: var(--btn-secondary-color);
+  background-color: var(--btn-secondary-background-color);
+}
+
+body[data-theme="light"] .mat-primary {
+  color: #595702;
+
+}
+
+body[data-theme="light"] button.mat-primary {
+  color: #595702;
+  background: var(--mdc-filled-text-field-container-color);
+}
+
+mat-label {
+  //color:
+  color: var(--label-font-color)
+}
+

@@ -1,0 +1,41 @@
+:host {
+  width: 100%;
+  max-width: 400px;
+}
+
+.content {
+  margin-top: 15px;
+
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      font-weight: bold;
+      flex: 1;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    mat-icon {
+      cursor: pointer;
+
+      &:hover {
+        color: var(--play-btn-submit);
+      }
+    }
+  }
+}
+
+.btn-group {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}

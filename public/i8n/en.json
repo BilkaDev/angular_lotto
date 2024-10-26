@@ -1,0 +1,105 @@
+{
+  "core": {
+    "home": "Home",
+    "play": "Play",
+    "results": "Results",
+    "login": "Login",
+    "register": "Register",
+    "formService": {
+      "required": "You must enter a value",
+      "minLength": "Minimum number of characters",
+      "maxLength": "Maximum number of characters",
+      "email": "Provide a valid email address",
+      "repeatedPassword": "Passwords must be the same"
+    }
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "login": "Login",
+    "password": "Password",
+    "repeatedPassword": "Repeated password",
+    "youDontHaveAccount": "You don't have account",
+    "email": "Email",
+    "accountCreated": "Account has been created",
+    "logout": "Logout",
+    "logoutSuccess": "Logout out",
+    "demo": "Try Demo"
+  },
+  "home": {
+    "header": "Welcome to AngularLotto",
+    "description": "Get ready for exciting fun and a chance to win! Every Saturday at 12:00 our drawing is held, During which we choose 6 numbers. Your task is to pick at least 3 of them to win fantastic prizes!",
+    "how-it-work": "How it works?",
+    "have-fun": "Draw, win and have fun!",
+    "join-us": "Join our community of players, follow the results and stay up to date with the latest rewards. Don't miss your chance to win - play today and have a chance to win big!",
+    "list": {
+      "login": "Log in",
+      "login-desc": "Log in to your account!",
+      "choose": "Choose your numbers",
+      "choose-desc": "Type 6 digits from 1 to 99.",
+      "wait": "Wait for the drawing",
+      "wait-desc": "Every Saturday at 12:00 we draw 6 numbers.",
+      "check": "Check the score",
+      "check-desc": "If you hit at least 3 numbers, you are the winner!"
+    }
+  },
+  "error": {
+    "six-numbers-required": "6 numbers are required",
+    "numbers-between": "numbers must be between 1 and 99",
+    "different-numbers": "6 different numbers are required",
+    "bad-request": "Bad Request",
+    "bad-request-desc": "The server could not understand the request due to invalid syntax.",
+    "unauthorized": "Unauthorized",
+    "unauthorized-desc": "You are not authorized to access this resource.",
+    "forbidden": "Forbidden",
+    "forbidden-desc": "You do not have permission to access this resource.",
+    "not-found": "Not Found",
+    "not-found-desc": "The requested resource could not be found on this server.",
+    "500": "Something Went Wrong",
+    "500-desc": "The server encountered an error and could not complete your request.",
+    "503": "Something Went Wrong",
+    "503-desc": "The server is currently unavailable (overloaded or down). Please try again later.",
+    "unknown-error": "Something Went Wrong",
+    "unknown-error-desc": "An unexpected error occurred. Please try again.",
+    "resultNotFound": "Given ticket doest not exist",
+    "denied": "Access denied",
+    "userNotFound": "The specified user with the given name does not exist",
+    "invalidData": "The specified data is invalid",
+    "tokenExpired": "The indicated token is empty or not valid",
+    "loginNotExist": "The user with the specified name does not exist",
+    "emailExist": "The user with the specified email already exists",
+    "incorrectCredentials": "Incorrect credentials"
+  },
+  "play": {
+    "ticketForm": {
+      "title": "Play the lottery",
+      "subtitle": "Enter your lucky numbers or just fill the fields randomly.",
+      "submit": "Submit",
+      "random": "Random"
+    },
+    "ticketItem": {
+      "title": "Lottery ticket",
+      "subtitle": "Copy the ticket ID by clicking on icon.",
+      "play": "Play",
+      "results": "Results",
+      "drawDate": "Draw date",
+      "ticketId": "TicketID",
+      "numbers": "Numbers"
+    }
+  },
+  "result": {
+    "WAIT_MESSAGE": "Results are being calculated, please come back later",
+    "WIN_MESSAGE": "Congratulations, you won!",
+    "LOSE_MESSAGE": "No luck, try again!",
+    "ALREADY_CHECKED": "You have already checked your ticket, please come back later",
+    "HASH_DOES_NOT_EXIST_MESSAGE": "Given ticket does not exist",
+    "drawDate": "Draw date",
+    "numbers": "Numbers",
+    "wonNumbers": "Won numbers",
+    "hitNumbers": "Hit numbers",
+    "submit": "Submit",
+    "label": "Insert your ticketID",
+    "title": "Check results",
+    "subtitle": "Winning numbers are drawn every Saturday"
+  }
+}

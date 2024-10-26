@@ -1,0 +1,27 @@
+<app-card>
+  <form card-content [formGroup]='loginForm' (ngSubmit)='onLogin()'>
+    <div class='form-input'>
+      <mat-form-field appearance='fill'>
+        <mat-label>{{ "auth.login" | translate }}</mat-label>
+        <input matInput [formControl]='controls.login'>
+        <mat-error *ngIf='controls.login.invalid'>{{ getErrorMessage(controls.login) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class='form-input'>
+      <mat-form-field appearance='fill'>
+        <mat-label>{{ "auth.password" | translate }}</mat-label>
+        <input type='password' matInput [formControl]='controls.password'>
+        <mat-error *ngIf='controls.password.invalid'>{{ getErrorMessage(controls.password) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class='actions'>
+      <button type="submit" mat-raised-button color='primary'
+              [disabled]='loginForm.invalid'>{{ "auth.signIn" | translate }}
+      </button>
+      <button (click)="demoLogin()" type="button" mat-raised-button color='primary'>{{ "auth.demo" | translate }}
+      </button>
+    </div>
+    <p class='text-center'>{{ "auth.youDontHaveAccount" | translate }}? <a
+      routerLink='/auth/register'>{{ "auth.signUp" | translate }}</a></p>
+  </form>
+</app-card>
